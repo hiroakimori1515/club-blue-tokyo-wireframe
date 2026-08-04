@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>セッティング履歴｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
+  <title>オファー履歴｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260804">
   <style>
@@ -20,19 +20,10 @@
     .page-header h1 { font-size: 28px; margin-bottom: 8px; }
     .page-header p { color: #666; font-size: 14px; }
     
-    .history-tabs { display: flex; gap: 0; margin-bottom: 24px; }
-    .history-tab { flex: 1; padding: 16px; text-align: center; background-color: #fff; border: 1px solid #ddd; font-size: 14px; cursor: pointer; }
-    .history-tab:not(:last-child) { border-right: none; }
-    .history-tab.active { background-color: #333; color: #fff; border-color: #333; }
-    
-    .history-list { }
     .history-item { background-color: #fff; border: 1px solid #ddd; margin-bottom: 16px; }
     .history-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #eee; }
     .history-date { font-size: 14px; color: #666; }
-    .history-status { padding: 6px 16px; font-size: 13px; border: 1px solid; }
-    .history-status.completed { border-color: #51cf66; color: #2f9e44; background-color: #d3f9d8; }
-    .history-status.pending { border-color: #ffd43b; color: #e67700; background-color: #fff9db; }
-    .history-status.cancelled { border-color: #ff8787; color: #e03131; background-color: #ffe3e3; }
+    .history-status { padding: 6px 16px; font-size: 13px; border: 1px solid #51cf66; color: #2f9e44; background-color: #d3f9d8; }
     
     .history-body { display: flex; padding: 20px; gap: 24px; }
     .history-photo { width: 100px; height: 130px; background-color: #f5f5f5; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #999; flex-shrink: 0; }
@@ -46,9 +37,7 @@
     .history-actions { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
     .history-actions .btn { font-size: 13px; white-space: nowrap; }
     
-    .empty-state { text-align: center; padding: 80px 20px; background-color: #fff; border: 1px solid #ddd; }
-    .empty-state h2 { font-size: 20px; margin-bottom: 16px; color: #666; }
-    .empty-state p { font-size: 14px; color: #999; margin-bottom: 24px; }
+    .note-box { background-color: #f8f8f8; border: 1px solid #ddd; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; color: #666; line-height: 1.8; }
     
     @media (max-width: 768px) {
       .history-body { flex-direction: column; }
@@ -67,38 +56,35 @@
           <li><a href="mypage.html">マイページ</a></li>
           <li><a href="female-list.html">女性検索</a></li>
           <li><a href="favorites.html">お気に入り</a></li>
-          <li><a href="messages.html">メッセージ</a></li>
-          <li><a href="history.html" style="border-bottom: 2px solid #fff;">セッティング履歴</a></li>
+          <li><a href="cart.html">カート</a></li>
+          <li><a href="history.html" style="border-bottom: 2px solid #fff;">オファー履歴</a></li>
           <li><a href="account.html">会員情報</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="login.html">ログアウト</a>
+        <a href="../login.html" class="btn btn-primary">ログアウト</a>
       </div>
     </div>
   </header>
 
   <main class="history-page">
     <div class="history-container">
-      <span class="section-label">会員専用ページ: セッティング履歴</span>
+      <span class="section-label">会員専用ページ: オファー履歴</span>
       
       <div class="page-header">
-        <h1>セッティング履歴</h1>
-        <p class="added-content">過去のセッティングを確認できます</p>
+        <h1>オファー履歴</h1>
+        <p class="added-content">決済が完了したオファーの履歴です</p>
       </div>
 
-      <div class="history-tabs">
-        <div class="history-tab active">すべて</div>
-        <div class="history-tab">調整中</div>
-        <div class="history-tab">完了</div>
-        <div class="history-tab">キャンセル</div>
+      <div class="note-box added-content">
+        ※日時・場所は運営にて調整いたします。本画面には決済済みのオファー内容のみ表示されます。
       </div>
 
       <div class="history-list">
         <div class="history-item added-content">
           <div class="history-header">
-            <span class="history-date">申込日: 2024/11/28</span>
-            <span class="history-status pending">調整中</span>
+            <span class="history-date">決済日: 2024/11/28</span>
+            <span class="history-status">決済済み</span>
           </div>
           <div class="history-body">
             <div class="history-photo">[写真]</div>
@@ -106,25 +92,24 @@
               <p class="history-name">斉藤 るな 様</p>
               <span class="history-rank">Privilege Selection</span>
               <dl class="history-details">
-                <dt>希望日時</dt>
-                <dd>2024/12/10（火）19:00〜</dd>
-                <dt>希望エリア</dt>
-                <dd>銀座・新橋</dd>
                 <dt>紹介料</dt>
                 <dd>¥70,000</dd>
+                <dt>決済方法</dt>
+                <dd>クレジットカード</dd>
+                <dt>注文番号</dt>
+                <dd>OF-20241128-001</dd>
               </dl>
             </div>
             <div class="history-actions">
               <a href="female-detail.html" class="btn">プロフィール</a>
-              <a href="history.html" class="btn">キャンセル</a>
             </div>
           </div>
         </div>
 
         <div class="history-item added-content">
           <div class="history-header">
-            <span class="history-date">セッティング日: 2024/11/15</span>
-            <span class="history-status completed">完了</span>
+            <span class="history-date">決済日: 2024/11/15</span>
+            <span class="history-status">決済済み</span>
           </div>
           <div class="history-body">
             <div class="history-photo">[写真]</div>
@@ -132,25 +117,24 @@
               <p class="history-name">田中 あいり 様</p>
               <span class="history-rank">Infinity Blue</span>
               <dl class="history-details">
-                <dt>セッティング日時</dt>
-                <dd>2024/11/15（金）19:30〜</dd>
-                <dt>エリア</dt>
-                <dd>六本木</dd>
                 <dt>紹介料</dt>
                 <dd>¥50,000</dd>
+                <dt>決済方法</dt>
+                <dd>クレジットカード</dd>
+                <dt>注文番号</dt>
+                <dd>OF-20241115-003</dd>
               </dl>
             </div>
             <div class="history-actions">
               <a href="female-detail.html" class="btn">プロフィール</a>
-              <a href="female-detail.html" class="btn btn-primary">再度申込む</a>
             </div>
           </div>
         </div>
 
         <div class="history-item added-content">
           <div class="history-header">
-            <span class="history-date">申込日: 2024/10/20</span>
-            <span class="history-status cancelled">キャンセル</span>
+            <span class="history-date">決済日: 2024/10/05</span>
+            <span class="history-status">決済済み</span>
           </div>
           <div class="history-body">
             <div class="history-photo">[写真]</div>
@@ -158,17 +142,16 @@
               <p class="history-name">山本 さくら 様</p>
               <span class="history-rank">Royal Blue</span>
               <dl class="history-details">
-                <dt>希望日時</dt>
-                <dd>2024/10/28（土）18:00〜</dd>
-                <dt>希望エリア</dt>
-                <dd>渋谷・恵比寿</dd>
-                <dt>キャンセル理由</dt>
-                <dd>お相手都合</dd>
+                <dt>紹介料</dt>
+                <dd>¥40,000</dd>
+                <dt>決済方法</dt>
+                <dd>銀行振込</dd>
+                <dt>注文番号</dt>
+                <dd>OF-20241005-002</dd>
               </dl>
             </div>
             <div class="history-actions">
               <a href="female-detail.html" class="btn">プロフィール</a>
-              <a href="female-detail.html" class="btn btn-primary">再度申込む</a>
             </div>
           </div>
         </div>

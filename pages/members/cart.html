@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カート｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=20260804">
+  <style>
+    .member-header { background-color: #333; color: #fff; }
+    .member-header .logo-placeholder { background-color: #fff; color: #333; }
+    .member-header .global-nav a { color: #fff; }
+    .member-header .btn { border-color: #fff; color: #fff; }
+    .member-header .btn-primary { background-color: #fff; color: #333; }
+    
+    .cart-page { padding: 40px 0 80px; background-color: #f5f5f5; min-height: calc(100vh - 80px); }
+    .cart-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    
+    .page-header { margin-bottom: 24px; }
+    .page-header h1 { font-size: 28px; margin-bottom: 8px; }
+    .page-header p { color: #666; font-size: 14px; }
+    
+    .note-box { background-color: #f8f8f8; border: 1px solid #ddd; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; color: #666; line-height: 1.8; }
+    
+    .cart-layout { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    
+    .cart-list { }
+    .cart-item { background-color: #fff; border: 1px solid #ddd; margin-bottom: 16px; display: flex; gap: 20px; padding: 20px; }
+    .cart-photo { width: 100px; height: 130px; background-color: #f5f5f5; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #999; flex-shrink: 0; }
+    .cart-info { flex-grow: 1; }
+    .cart-rank { font-size: 12px; padding: 3px 10px; border: 1px solid #f783ac; color: #c2255c; background-color: #ffdeeb; display: inline-block; margin-bottom: 8px; }
+    .cart-name { font-size: 18px; font-weight: bold; margin-bottom: 12px; }
+    .cart-meta { font-size: 14px; color: #666; margin-bottom: 8px; }
+    .cart-price { font-size: 20px; font-weight: bold; margin-top: 12px; }
+    .cart-actions { display: flex; flex-direction: column; gap: 8px; justify-content: center; }
+    .cart-actions .btn { font-size: 13px; white-space: nowrap; }
+    
+    .cart-summary { background-color: #fff; border: 2px solid #333; padding: 24px; position: sticky; top: 100px; }
+    .cart-summary h2 { font-size: 18px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #ddd; }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+    .summary-total { display: flex; justify-content: space-between; margin-top: 16px; padding-top: 16px; border-top: 2px solid #333; font-size: 18px; font-weight: bold; }
+    .cart-summary .btn { width: 100%; margin-top: 24px; text-align: center; }
+    .summary-note { font-size: 12px; color: #666; margin-top: 16px; line-height: 1.7; }
+    
+    .flow-steps { display: flex; gap: 8px; margin-bottom: 32px; }
+    .flow-step { flex: 1; text-align: center; padding: 12px; border: 1px solid #ddd; background-color: #fff; font-size: 13px; }
+    .flow-step.active { background-color: #333; color: #fff; border-color: #333; }
+    
+    @media (max-width: 900px) {
+      .cart-layout { grid-template-columns: 1fr; }
+      .cart-summary { position: static; }
+      .cart-item { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header member-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="female-list.html">女性検索</a></li>
+          <li><a href="favorites.html">お気に入り</a></li>
+          <li><a href="cart.html" style="border-bottom: 2px solid #fff;">カート</a></li>
+          <li><a href="history.html">オファー履歴</a></li>
+          <li><a href="account.html">会員情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="../login.html" class="btn btn-primary">ログアウト</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-container">
+      <span class="section-label">会員専用ページ: カート</span>
+      
+      <div class="page-header">
+        <h1>カート</h1>
+        <p class="added-content">オファーしたい女性を確認し、決済へ進みます</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step active">1. カート確認</div>
+        <div class="flow-step">2. 決済</div>
+        <div class="flow-step">3. 完了</div>
+      </div>
+
+      <div class="note-box added-content">
+        ※カートに入れた時点ではまだオファーは確定しません。<br>
+        ※決済完了後にオファーが確定し、日時・場所は運営にて調整いたします。
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-list">
+          <div class="cart-item added-content">
+            <div class="cart-photo">[写真]</div>
+            <div class="cart-info">
+              <span class="cart-rank">Privilege Selection</span>
+              <p class="cart-name">斉藤 るな 様</p>
+              <p class="cart-meta">26歳 / 165cm / スレンダー</p>
+              <p class="cart-price">¥70,000</p>
+            </div>
+            <div class="cart-actions">
+              <a href="female-detail.html" class="btn">プロフィール</a>
+              <a href="#" class="btn">削除</a>
+            </div>
+          </div>
+
+          <div class="cart-item added-content">
+            <div class="cart-photo">[写真]</div>
+            <div class="cart-info">
+              <span class="cart-rank">Infinity Blue</span>
+              <p class="cart-name">田中 あいり 様</p>
+              <p class="cart-meta">24歳 / 158cm / 普通</p>
+              <p class="cart-price">¥50,000</p>
+            </div>
+            <div class="cart-actions">
+              <a href="female-detail.html" class="btn">プロフィール</a>
+              <a href="#" class="btn">削除</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cart-summary">
+          <h2>ご注文内容</h2>
+          <div class="summary-row added-content">
+            <span>オファー人数</span>
+            <span>2名</span>
+          </div>
+          <div class="summary-row added-content">
+            <span>紹介料小計</span>
+            <span>¥120,000</span>
+          </div>
+          <div class="summary-total added-content">
+            <span>合計</span>
+            <span>¥120,000</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary btn-large">決済へ進む</a>
+          <p class="summary-note added-content">
+            決済完了後、オファー履歴に反映されます。<br>
+            日時・場所のご連絡は運営より別途ご案内いたします。
+          </p>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 0; background-color: #fff;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
