@@ -16,13 +16,32 @@
     .breadcrumb-list li:last-child::after { content: ""; }
     .content-section { padding: 60px 0; }
     .content-section:nth-child(even) { background-color: #f8f8f8; }
-    .lead-text { font-size: 18px; line-height: 2.2; text-align: center; max-width: 800px; margin: 0 auto 40px; }
+    .lead-section {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .lead-visual .image-placeholder {
+      min-height: 420px;
+      height: 100%;
+    }
+    .lead-copy {
+      text-align: left;
+    }
+    .lead-text {
+      font-size: 18px;
+      line-height: 2.2;
+      text-align: left;
+      max-width: none;
+      margin: 0;
+    }
     .lead-highlight {
       display: inline-block;
-      margin: 8px 0 20px;
+      margin: 8px 0 16px;
       padding: 8px 20px;
       border: 2px solid #333;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       letter-spacing: 0.04em;
     }
@@ -67,11 +86,13 @@
     .cta-box p { margin-bottom: 32px; }
     .cta-box .btn { border-color: #fff; }
     .cta-box .btn-primary { background-color: #fff; color: #333; }
-    .two-column-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 40px; }
-    .image-placeholder-large { min-height: 350px; }
     @media (max-width: 1024px) {
+      .lead-section { grid-template-columns: 1fr; gap: 32px; }
+      .lead-copy,
+      .lead-text { text-align: center; }
+      .lead-visual { order: -1; }
+      .lead-visual .image-placeholder { min-height: 280px; }
       .merit-grid { grid-template-columns: 1fr; }
-      .two-column-content { grid-template-columns: 1fr; }
       .safety-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
@@ -124,33 +145,23 @@
 
       <!-- リード文 -->
       <section class="content-section">
-        <p class="lead-text">
-          Blue東京では、<br>
-          <span class="lead-highlight">「安心・安全・品のある出会い」</span><br>
-          を何より大切にしています。<br><br>
-          登録女性の多くが未経験からスタート。<br>
-          担当スタッフが丁寧にサポートいたしますので安心してご登録いただけます。<br><br>
-          男性会員様も厳正な面談を行っておりますので、<br>
-          安心して出会いを楽しんでいただけます。
-        </p>
-
-        <div class="two-column-content">
-          <div>
-            <div class="image-placeholder image-placeholder-large">
+        <div class="lead-section">
+          <div class="lead-visual">
+            <div class="image-placeholder">
               [画像：落ち着いた服装の成人女性]<br><br>
               顔が見切れる・後ろ姿・ぼかし等で<br>プライバシーに配慮した構図
             </div>
           </div>
-          <div>
-            <h2 style="font-size: 28px; margin-bottom: 24px;">安心して始められる交際クラブ</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">登録費無料</div>
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">撮影費無料</div>
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">未経験歓迎</div>
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">担当スタッフ制</div>
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">身バレ防止</div>
-              <div class="benefit-item" style="border: 1px solid #333; padding: 16px; text-align: center;">出張面談可能</div>
-            </div>
+          <div class="lead-copy">
+            <p class="lead-text">
+              Blue東京では、<br>
+              <span class="lead-highlight">「安心・安全・品のある出会い」</span><br>
+              を何より大切にしています。<br><br>
+              登録女性の多くが未経験からスタート。<br>
+              担当スタッフが丁寧にサポートいたしますので安心してご登録いただけます。<br><br>
+              男性会員様も厳正な面談を行っておりますので、<br>
+              安心して出会いを楽しんでいただけます。
+            </p>
           </div>
         </div>
       </section>
