@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>料金プラン｜Club Blue Tokyo - ワイヤーフレーム</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260804g">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260804i">
   <style>
     .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
     .page-title { font-size: 36px; margin-bottom: 16px; }
@@ -26,33 +26,35 @@
     .pricing-table .price { font-size: 28px; font-weight: bold; }
     .pricing-table .price-label { font-size: 14px; color: #666; margin-bottom: 8px; }
     
-    /* プラン比較カード */
+    /* プラン比較カード（共通.plan-* との衝突を回避） */
     .plan-comparison { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 40px; align-items: stretch; }
-    .plan-box { border: 3px solid #333; background-color: #fff; display: flex; flex-direction: column; }
+    .plan-box { border: 3px solid #333; background-color: #fff; display: flex; flex-direction: column; color: #333; }
     .plan-box.recommended { position: relative; }
     .plan-box.recommended::before { content: "おすすめ"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 4px 20px; font-size: 14px; }
-    .plan-header { background-color: #333; color: #fff; padding: 24px; text-align: center; }
-    .plan-header h3 { font-size: 24px; margin-bottom: 4px; }
-    .plan-name-ja { display: block; font-size: 14px; opacity: 0.85; font-weight: normal; margin-top: 4px; }
-    .plan-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
-    .plan-tags span {
+    .plan-box .plan-header { background-color: #333; color: #fff; padding: 24px; text-align: center; }
+    .plan-box .plan-header h3 { font-size: 24px; margin-bottom: 4px; color: #fff; }
+    .plan-box .plan-name-ja { display: block; font-size: 14px; color: rgba(255, 255, 255, 0.85); font-weight: normal; margin-top: 4px; }
+    .plan-box .plan-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+    .plan-box .plan-tags span {
       display: inline-block;
       padding: 6px 12px;
       border: 1px solid #fff;
       font-size: 13px;
       font-weight: bold;
+      color: #fff;
+      background-color: transparent;
     }
-    .plan-body { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
-    .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 20px; font-weight: bold; }
-    .plan-desc { font-size: 14px; line-height: 1.9; margin-bottom: 24px; flex-grow: 1; }
-    .plan-desc p { margin-bottom: 14px; }
-    .plan-desc p:last-child { margin-bottom: 0; }
-    .plan-price-row { text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
-    .plan-price-row:last-of-type { margin-bottom: 24px; }
-    .plan-price-row .label { font-size: 14px; color: #666; margin-bottom: 4px; }
-    .plan-price-row .price { font-size: 36px; font-weight: bold; }
-    .plan-price-row .price span { font-size: 18px; }
-    .plan-cta { text-align: center; margin-top: auto; }
+    .plan-box .plan-body { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; color: #333; background-color: #fff; }
+    .plan-box .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 20px; font-weight: bold; color: #333; }
+    .plan-box .plan-desc { font-size: 14px; line-height: 1.9; margin-bottom: 24px; flex-grow: 1; color: #333; }
+    .plan-box .plan-desc p { margin-bottom: 14px; color: #333; }
+    .plan-box .plan-desc p:last-child { margin-bottom: 0; }
+    .plan-box .plan-price-row { text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .plan-box .plan-price-row:last-of-type { margin-bottom: 24px; }
+    .plan-box .plan-price-row .label { font-size: 14px; color: #666; margin-bottom: 4px; }
+    .plan-box .plan-price-row .price { font-size: 36px; font-weight: bold; color: #333; }
+    .plan-box .plan-price-row .price span { font-size: 18px; color: #333; }
+    .plan-box .plan-cta { text-align: center; margin-top: auto; }
 
     /* 紹介料セクション */
     .rank-fee-grid {

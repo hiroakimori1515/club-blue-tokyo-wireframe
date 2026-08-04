@@ -684,7 +684,7 @@ section {
   margin-top: 4px;
 }
 
-.plan-tags {
+.plan-card .plan-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -692,13 +692,14 @@ section {
   margin-top: 16px;
 }
 
-.plan-tags span {
+.plan-card .plan-tags span {
   display: inline-block;
   padding: 6px 12px;
   border: 2px solid #333;
   font-size: 13px;
   font-weight: bold;
   background-color: #f8f8f8;
+  color: #333;
 }
 
 .plan-card.featured .plan-tags span {
@@ -706,13 +707,14 @@ section {
   color: #fff;
 }
 
-.plan-summary {
+.plan-card .plan-summary {
   font-size: 15px;
   line-height: 1.8;
   text-align: center;
   margin-bottom: 24px;
   font-weight: bold;
   flex-grow: 1;
+  color: #333;
 }
 
 .plan-prices {
