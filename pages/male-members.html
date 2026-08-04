@@ -66,79 +66,16 @@
       font-weight: bold;
       background-color: #f8f8f8;
     }
-    .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 16px; font-weight: bold; }
-    .plan-desc { font-size: 14px; line-height: 1.9; color: #333; margin-bottom: 24px; flex-grow: 1; }
-    .plan-desc p { margin-bottom: 14px; }
-    .plan-desc p:last-child { margin-bottom: 0; }
+    .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 24px; font-weight: bold; flex-grow: 1; }
     .plan-prices { border-top: 1px solid #ddd; padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: center; }
     .plan-card.featured { border-width: 3px; }
     .plan-card.featured .plan-tags span { background-color: #333; color: #fff; }
-
-    .rank-fee-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-    .rank-fee-card {
-      border: 2px solid #333;
-      padding: 28px 24px;
-      background-color: #fff;
+    .rank-teaser {
+      max-width: 720px;
+      margin: 0 auto 32px;
       text-align: center;
-    }
-    .rank-fee-card.featured {
-      border-width: 3px;
-      grid-column: 1 / -1;
-    }
-    .rank-fee-name {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-    .rank-fee-name-ja {
-      display: block;
-      font-size: 13px;
-      color: #666;
-      font-weight: normal;
-      margin-top: 4px;
-    }
-    .rank-fee-price {
-      margin: 16px 0;
-      font-size: 15px;
-      color: #666;
-    }
-    .rank-fee-price strong {
-      font-size: 28px;
-      color: #333;
-    }
-    .rank-fee-desc {
-      font-size: 15px;
-      line-height: 1.9;
-    }
-    .rank-fee-tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin: 16px 0;
-    }
-    .rank-fee-tags span {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 2px solid #333;
-      font-size: 13px;
-      font-weight: bold;
-      background-color: #f8f8f8;
-    }
-    .rank-fee-card.featured .rank-fee-tags span:last-child {
-      background-color: #333;
-      color: #fff;
-    }
-    .rank-fee-note {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      text-align: center;
-      margin-top: 8px;
+      font-size: 16px;
+      line-height: 2;
     }
 
     .qualification-lead,
@@ -179,8 +116,6 @@
     @media (max-width: 1024px) {
       .feature-list { grid-template-columns: 1fr; }
       .plan-grid { grid-template-columns: 1fr; }
-      .rank-fee-grid { grid-template-columns: 1fr; }
-      .rank-fee-card.featured { grid-column: auto; }
     }
   </style>
 </head>
@@ -350,18 +285,6 @@
                   </div>
                 </div>
                 <p class="plan-summary">Blue東京のスタンダード会員プランです</p>
-                <div class="plan-desc">
-                  <p>
-                    AzureからInfinite Blueまで、幅広い女性をご紹介いたします。<br>
-                    ご希望や価値観、ライフスタイルを丁寧にお伺いし、一人ひとりに最適な出会いをご提案いたします。
-                  </p>
-                  <p>
-                    また、ご利用状況やご希望に応じて、より上質な出会いをご提供する「Blue Privilege（ブループリビレッジ）」へのアップグレードも可能です。
-                  </p>
-                  <p>
-                    まずはBlue Memberとして、Blue東京ならではの安心・安全で質の高い出会いをご体感ください。
-                  </p>
-                </div>
                 <div class="plan-prices">
                   <div class="plan-price-item">
                     <p class="plan-price-label">入会金</p>
@@ -386,21 +309,7 @@
                     <span>限定女性紹介</span>
                   </div>
                 </div>
-                <p class="plan-summary">Blue東京の最上位会員プランです。</p>
-                <div class="plan-desc">
-                  <p>
-                    Blue Memberではご紹介対象外となる特別ランクの女性を含め、すべてのランクの女性をご紹介いたします。
-                  </p>
-                  <p>
-                    さらに、Blue Privilege会員様には、ご希望条件に応じた優先的なご紹介や、HP非掲載女性・シークレット女性など、限られた会員様のみがご案内可能な特別な出会いもご提供しております。
-                  </p>
-                  <p>
-                    専任スタッフが一人ひとりのご要望を丁寧にお伺いし、質・品格・相性を重視したワンランク上のマッチングをサポートいたします。
-                  </p>
-                  <p>
-                    Blue東京が誇る、最高峰のメンバーシップです。
-                  </p>
-                </div>
+                <p class="plan-summary">Blue東京の最上位会員プランです</p>
                 <div class="plan-prices">
                   <div class="plan-price-item">
                     <p class="plan-price-label">入会金</p>
@@ -415,78 +324,24 @@
             </div>
 
             <div class="text-center mt-40">
-              <a href="pricing.html" class="btn">料金プランの詳細を見る</a>
+              <a href="pricing.html#membership-plan" class="btn">料金プランの詳細を見る</a>
             </div>
           </section>
 
-          <!-- 紹介料 -->
+          <!-- 紹介料（簡易） -->
           <section class="content-section">
             <span class="section-label">紹介料</span>
             <div class="section-header">
               <h2 class="section-title">女性ランク別紹介料</h2>
             </div>
 
-            <div class="rank-fee-grid">
-              <div class="rank-fee-card">
-                <h3 class="rank-fee-name">
-                  Azure
-                  <span class="rank-fee-name-ja">アジュール</span>
-                </h3>
-                <p class="rank-fee-price">紹介料 <strong>20,000</strong>円</p>
-                <p class="rank-fee-desc">まずはBlue東京を体験したい方へ。</p>
-              </div>
+            <p class="rank-teaser">
+              Azure 20,000円 〜 Blue Privilege Selection 70,000円〜<br>
+              ランクごとの内容・詳細は料金案内ページにてご確認ください。
+            </p>
 
-              <div class="rank-fee-card">
-                <h3 class="rank-fee-name">
-                  Sapphire
-                  <span class="rank-fee-name-ja">サファイア</span>
-                </h3>
-                <p class="rank-fee-price">紹介料 <strong>30,000</strong>円</p>
-                <p class="rank-fee-desc">
-                  人気女性を含め、<br>
-                  幅広い女性をご紹介。
-                </p>
-              </div>
-
-              <div class="rank-fee-card">
-                <h3 class="rank-fee-name">
-                  Royal Blue
-                  <span class="rank-fee-name-ja">ロイヤルブルー</span>
-                </h3>
-                <p class="rank-fee-price">紹介料 <strong>40,000</strong>円</p>
-                <p class="rank-fee-desc">
-                  選ばれた会員様へ。<br>
-                  ハイクラス女性との上質な出会いをご提供。
-                </p>
-              </div>
-
-              <div class="rank-fee-card">
-                <h3 class="rank-fee-name">
-                  Infinity Blue
-                  <span class="rank-fee-name-ja">インフィニティブルー</span>
-                </h3>
-                <p class="rank-fee-price">紹介料 <strong>50,000</strong>円</p>
-                <p class="rank-fee-desc">Blue東京の真髄を。</p>
-              </div>
-
-              <div class="rank-fee-card featured">
-                <h3 class="rank-fee-name">
-                  Blue Privilege Selection
-                  <span class="rank-fee-name-ja">ブループリビレッジ セレクション</span>
-                </h3>
-                <div class="rank-fee-tags">
-                  <span>70,000円～</span>
-                  <span>Blue Privilege会員様限定</span>
-                </div>
-                <p class="rank-fee-desc">
-                  厳選された特別女性や<br>
-                  VIP会員限定紹介など、<br>
-                  最上級のサービスをご案内いたします。
-                </p>
-                <p class="rank-fee-note">
-                  ※シークレット女性・HP非掲載女性につきましてはお問い合わせください。
-                </p>
-              </div>
+            <div class="text-center">
+              <a href="pricing.html#rank-fees" class="btn">紹介料の詳細を見る</a>
             </div>
           </section>
 
