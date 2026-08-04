@@ -399,20 +399,30 @@
     const maleFlow = document.getElementById('male-flow');
     const femaleFlow = document.getElementById('female-flow');
 
+    function showFlow(target) {
+      tabs.forEach(function(t) {
+        t.classList.toggle('active', t.dataset.target === target);
+      });
+      if (target === 'female') {
+        maleFlow.style.display = 'none';
+        femaleFlow.style.display = 'block';
+      } else {
+        maleFlow.style.display = 'block';
+        femaleFlow.style.display = 'none';
+      }
+    }
+
     tabs.forEach(function(tab) {
       tab.addEventListener('click', function() {
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        
-        if (this.dataset.target === 'male') {
-          maleFlow.style.display = 'block';
-          femaleFlow.style.display = 'none';
-        } else {
-          maleFlow.style.display = 'none';
-          femaleFlow.style.display = 'block';
-        }
+        showFlow(this.dataset.target);
       });
     });
+
+    if (location.hash === '#female-flow') {
+      showFlow('female');
+    } else if (location.hash === '#male-flow') {
+      showFlow('male');
+    }
   </script>
 
 </body>

@@ -145,6 +145,10 @@ section {
   z-index: 1000;
 }
 
+[id] {
+  scroll-margin-top: 100px;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
