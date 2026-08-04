@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blue東京について｜Club Blue Tokyo - ワイヤーフレーム</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260804">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260804e">
   <style>
     .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
     .page-title { font-size: 36px; margin-bottom: 16px; }
@@ -19,6 +19,7 @@
     
     /* コンセプトセクション */
     .concept-section { background-color: #f8f8f8; padding: 80px 20px; text-align: center; }
+    .concept-lead { font-size: 18px; line-height: 2; max-width: 720px; margin: 0 auto 40px; }
     .concept-title { font-size: 32px; margin-bottom: 48px; }
     .concept-list { display: flex; flex-direction: column; gap: 24px; max-width: 500px; margin: 0 auto 48px; }
     .concept-list li { font-size: 20px; }
@@ -35,7 +36,14 @@
     /* ミッション */
     .mission-section { background-color: #333; color: #fff; padding: 80px 20px; text-align: center; }
     .mission-title { font-size: 28px; margin-bottom: 32px; }
-    .mission-text { font-size: 18px; line-height: 2.2; max-width: 700px; margin: 0 auto; }
+    .mission-body { max-width: 760px; margin: 0 auto; text-align: left; }
+    .mission-body p { font-size: 17px; line-height: 2.2; margin-bottom: 28px; }
+    .mission-body p:last-child { margin-bottom: 0; }
+    .mission-highlight { font-size: 20px; font-weight: bold; text-align: center; margin: 40px 0; line-height: 1.8; }
+    .mission-criteria { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 24px; margin: 24px 0 32px; padding: 24px; border: 1px solid rgba(255,255,255,0.35); }
+    .mission-criteria li { font-size: 15px; line-height: 1.7; padding-left: 1.2em; position: relative; }
+    .mission-criteria li::before { content: "・"; position: absolute; left: 0; }
+    .mission-closing { font-size: 18px; text-align: center; font-weight: bold; margin-top: 40px; line-height: 2; }
     
     /* 代表メッセージ */
     .message-section { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; max-width: 900px; margin: 0 auto; }
@@ -65,6 +73,7 @@
     @media (max-width: 768px) {
       .feature-grid { grid-template-columns: 1fr; }
       .operation-grid { grid-template-columns: 1fr; }
+      .mission-criteria { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -104,8 +113,8 @@
 
   <section class="page-hero">
     <span class="section-label">PAGE: Blue東京について</span>
-    <h1 class="page-title">Blue東京について</h1>
-    <p class="page-subtitle added-content">品格ある出会いを、東京から。</p>
+    <h1 class="page-title">交際クラブ Blue東京</h1>
+    <p class="page-subtitle">ー 運命の出会いに、品格を。ー</p>
   </section>
 
   <main>
@@ -115,18 +124,21 @@
       <div class="container">
         <span class="section-label">CONCEPT</span>
         <h2 class="concept-title">Blueという名前に込めた想い</h2>
-        
-        <p style="font-size: 18px; margin-bottom: 40px;">Blueには、</p>
-        
+
+        <p class="concept-lead">
+          Blue東京は、ただ人と人を繋ぐ交際クラブではありません。<br>
+          「Blue」という言葉には、
+        </p>
+
         <ul class="concept-list">
           <li>・運命的な出会い</li>
           <li>・新しい人生との出会い</li>
           <li>・新たな可能性との出会い</li>
           <li>・心が動く感情との出会い</li>
         </ul>
-        
-        <p class="concept-footer">という想いを込めています。</p>
-        
+
+        <p class="concept-footer">という意味を込めています。</p>
+
         <div class="image-placeholder" style="max-width: 600px; margin: 60px auto 0; min-height: 200px;">
           [イメージ画像：抽象的なブルーのグラデーション]
         </div>
@@ -134,17 +146,48 @@
     </section>
 
     <!-- ミッション -->
-    <section class="mission-section">
+    <section class="mission-section" id="mission">
       <span class="section-label" style="background-color: #fff; color: #333;">MISSION</span>
-      <h2 class="mission-title added-content">私たちが大切にしていること</h2>
-      <p class="mission-text added-content">
-        Club Blue Tokyoは、単なる出会いの場ではありません。<br><br>
-        人と人との繋がりを大切にし、<br>
-        双方の人格と意思を尊重した<br>
-        品格ある出会いをご提供することを使命としています。<br><br>
-        安心・安全を第一に、<br>
-        お一人おひとりに寄り添ったサービスを心がけています。
-      </p>
+      <h2 class="mission-title">本当に質の高い出会いだけをお届けすること</h2>
+      <div class="mission-body">
+        <p>
+          人生には、偶然のようで必然だったと思える出会いがあります。<br>
+          その一つの出会いが人生を豊かにし、<br>
+          価値観を変え、<br>
+          未来を変えることがあります。
+        </p>
+        <p class="mission-highlight">
+          Blue東京は、<br>
+          本当に質の高い出会いだけをお届けすること。<br>
+          それを使命としております。
+        </p>
+        <p>
+          男性・女性ともに面談を行い、<br>
+          人柄や価値観を大切にしたマッチングを実施。
+        </p>
+        <p>
+          またBlue東京では、女性を容姿や職業だけで判断することはありません。<br>
+          美しさはもちろんのこと、次の要素までを総合的に評価し、独自の厳正な基準でランク分けを行っております。
+        </p>
+        <ul class="mission-criteria">
+          <li>人柄</li>
+          <li>品格</li>
+          <li>コミュニケーション能力</li>
+          <li>気遣い</li>
+          <li>知性</li>
+          <li>清潔感</li>
+          <li>立ち振る舞い</li>
+          <li>将来性（ポテンシャル）</li>
+        </ul>
+        <p>
+          ただ「綺麗」「可愛い」だけでは終わらない。<br>
+          実際にお会いした時に感じる魅力や、一緒に過ごす時間の心地よさを大切にし、Blue東京ならではの基準で厳選した女性のみをご紹介しております。
+        </p>
+        <p class="mission-closing">
+          安心・安全を最優先に、<br>
+          ワンランク上の出会いをご提供いたします。
+        </p>
+      </div>
     </section>
 
     <!-- 選ばれる理由 -->
