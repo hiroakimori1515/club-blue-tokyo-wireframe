@@ -359,14 +359,20 @@
   <script>
     function scrollToHashTarget() {
       if (!location.hash) return;
-      var target = document.getElementById(location.hash.slice(1));
-      if (target) {
-        target.scrollIntoView();
-      }
+      var id = decodeURIComponent(location.hash.slice(1));
+      var target = document.getElementById(id);
+      if (!target) return;
+      target.scrollIntoView();
     }
-    window.addEventListener('DOMContentLoaded', scrollToHashTarget);
-    window.addEventListener('hashchange', scrollToHashTarget);
-    window.addEventListener('load', scrollToHashTarget);
+    function scheduleHashScroll() {
+      scrollToHashTarget();
+      requestAnimationFrame(scrollToHashTarget);
+      setTimeout(scrollToHashTarget, 50);
+      setTimeout(scrollToHashTarget, 200);
+    }
+    window.addEventListener('DOMContentLoaded', scheduleHashScroll);
+    window.addEventListener('load', scheduleHashScroll);
+    window.addEventListener('hashchange', scheduleHashScroll);
   </script>
 
 </body>
