@@ -29,6 +29,13 @@
     .lead-copy {
       text-align: left;
     }
+    .lead-heading {
+      font-size: 24px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+    }
     .lead-text {
       font-size: 18px;
       line-height: 2.2;
@@ -36,14 +43,9 @@
       max-width: none;
       margin: 0;
     }
-    .lead-highlight {
-      display: inline-block;
-      margin: 8px 0 16px;
-      padding: 8px 20px;
-      border: 2px solid #333;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 0.04em;
+    .lead-copy .safety-promise-values {
+      justify-content: flex-start;
+      margin: 12px 0 20px;
     }
     .merit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
     .merit-item {
@@ -120,6 +122,7 @@
       .lead-section { grid-template-columns: 1fr; gap: 32px; }
       .lead-copy,
       .lead-text { text-align: center; }
+      .lead-copy .safety-promise-values { justify-content: center; }
       .lead-visual { order: -1; }
       .lead-visual .image-placeholder { min-height: 280px; }
       .merit-grid { grid-template-columns: 1fr; }
@@ -183,14 +186,21 @@
             </div>
           </div>
           <div class="lead-copy">
+            <h2 class="lead-heading">Blue東京のお約束</h2>
             <p class="lead-text">
-              Blue東京では、<br>
-              <span class="lead-highlight">「安心・安全・品のある出会い」</span><br>
-              を何より大切にしています。<br><br>
-              登録女性の多くが未経験からスタート。<br>
-              担当スタッフが丁寧にサポートいたしますので安心してご登録いただけます。<br><br>
-              男性会員様も厳正な面談を行っておりますので、<br>
-              安心して出会いを楽しんでいただけます。
+              Blue東京では、
+            </p>
+            <div class="safety-promise-values">
+              <span>安心</span>
+              <span>誠実</span>
+              <span>信頼</span>
+            </div>
+            <p class="lead-text">
+              を最も大切にしております。<br>
+              男性・女性双方が安心してご利用いただけるよう、<br>
+              本人確認・面談・運営管理を徹底。<br>
+              一人ひとりの大切な出会いを、<br>
+              責任を持ってサポートいたします。
             </p>
           </div>
         </div>
@@ -233,20 +243,6 @@
             <div class="safety-item">プライバシー保護</div>
             <div class="safety-item">24時間サポート体制</div>
             <div class="safety-item">完全予約制の面談</div>
-          </div>
-        </div>
-
-        <div class="safety-promise">
-          <div class="safety-promise-text">
-            <p>
-              Blue東京では、<br>
-              <span class="lead-highlight">「安心・安全・品のある出会い」</span><br>
-              を何より大切にしています。<br><br>
-              登録女性の多くが未経験からスタート。<br>
-              担当スタッフが丁寧にサポートいたしますので安心してご登録いただけます。<br><br>
-              男性会員様も厳正な面談を行っておりますので、<br>
-              安心して出会いを楽しんでいただけます。
-            </p>
           </div>
         </div>
       </section>
