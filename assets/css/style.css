@@ -239,6 +239,19 @@ section {
   white-space: nowrap;
 }
 
+
+/* Member area: always show nav */
+.member-header .global-nav {
+  display: block;
+}
+.member-header .header-cta {
+  display: flex;
+}
+.member-header .mobile-menu-btn {
+  display: none;
+}
+
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
   display: flex;
