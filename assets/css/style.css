@@ -149,9 +149,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  padding: 16px 20px;
-  max-width: 1200px;
+  gap: 40px;
+  padding: 16px 24px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -162,7 +162,7 @@ section {
   font-weight: bold;
   font-size: 14px;
   flex-shrink: 0;
-  margin-right: 8px;
+  margin-right: 16px;
 }
 
 /* Global Navigation */
@@ -170,11 +170,13 @@ section {
   display: none;
   flex: 1;
   min-width: 0;
+  padding: 0 16px;
 }
 
 .global-nav ul {
   display: flex;
-  gap: 24px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .global-nav a {
@@ -228,7 +230,7 @@ section {
   display: none;
   gap: 12px;
   flex-shrink: 0;
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 .header-cta .btn {
