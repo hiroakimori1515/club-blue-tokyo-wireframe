@@ -51,8 +51,32 @@
     .info-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
     .info-table th, .info-table td { padding: 16px 20px; border: 1px solid #ddd; text-align: left; }
     .info-table th { background-color: #f5f5f5; width: 30%; font-weight: bold; }
+
+    .plan-grid { grid-template-columns: repeat(2, 1fr); align-items: stretch; }
+    .plan-card { text-align: left; display: flex; flex-direction: column; background-color: #fff; }
+    .plan-card-header { text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .plan-name { font-size: 24px; margin-bottom: 8px; padding-bottom: 0; border-bottom: none; }
+    .plan-name-ja { display: block; font-size: 14px; color: #666; font-weight: normal; margin-top: 4px; }
+    .plan-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+    .plan-tags span {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 2px solid #333;
+      font-size: 13px;
+      font-weight: bold;
+      background-color: #f8f8f8;
+    }
+    .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 16px; font-weight: bold; }
+    .plan-desc { font-size: 14px; line-height: 1.9; color: #333; margin-bottom: 24px; flex-grow: 1; }
+    .plan-desc p { margin-bottom: 14px; }
+    .plan-desc p:last-child { margin-bottom: 0; }
+    .plan-prices { border-top: 1px solid #ddd; padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: center; }
+    .plan-card.featured { border-width: 3px; }
+    .plan-card.featured .plan-tags span { background-color: #333; color: #fff; }
+
     @media (max-width: 1024px) {
       .feature-list { grid-template-columns: 1fr; }
+      .plan-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -186,39 +210,84 @@
 
           <!-- 料金プラン -->
           <section class="content-section" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
-            <span class="section-label">料金プラン</span>
+            <span class="section-label">Membership Plan</span>
             <div class="section-header">
               <h2 class="section-title">男性会員プラン</h2>
             </div>
 
             <div class="plan-grid">
               <div class="plan-card">
-                <h3 class="plan-name">Blue Member</h3>
-                <div class="plan-price-item">
-                  <p class="plan-price-label">入会金</p>
-                  <p class="plan-price"><strong>50,000</strong>円</p>
+                <div class="plan-card-header">
+                  <h3 class="plan-name">
+                    Blue Member
+                    <span class="plan-name-ja">ブルーメンバー</span>
+                  </h3>
+                  <div class="plan-tags">
+                    <span>一般会員</span>
+                  </div>
                 </div>
-                <div class="plan-price-item">
-                  <p class="plan-price-label">更新料</p>
-                  <p class="plan-price"><strong>10,000</strong>円</p>
+                <p class="plan-summary">Blue東京のスタンダード会員プランです</p>
+                <div class="plan-desc">
+                  <p>
+                    AzureからInfinite Blueまで、幅広い女性をご紹介いたします。<br>
+                    ご希望や価値観、ライフスタイルを丁寧にお伺いし、一人ひとりに最適な出会いをご提案いたします。
+                  </p>
+                  <p>
+                    また、ご利用状況やご希望に応じて、より上質な出会いをご提供する「Blue Privilege（ブループリビレッジ）」へのアップグレードも可能です。
+                  </p>
+                  <p>
+                    まずはBlue Memberとして、Blue東京ならではの安心・安全で質の高い出会いをご体感ください。
+                  </p>
                 </div>
-                <p class="added-content" style="margin-top: 20px; font-size: 14px; color: #666;">
-                  すべての女性会員をご覧いただけます。専任コンシェルジュによるサポートをご利用いただけます。
-                </p>
+                <div class="plan-prices">
+                  <div class="plan-price-item">
+                    <p class="plan-price-label">入会金</p>
+                    <p class="plan-price"><strong>50,000</strong>円</p>
+                  </div>
+                  <div class="plan-price-item">
+                    <p class="plan-price-label">更新料</p>
+                    <p class="plan-price"><strong>10,000</strong>円</p>
+                  </div>
+                </div>
               </div>
-              <div class="plan-card">
-                <h3 class="plan-name">Blue Privilege</h3>
-                <div class="plan-price-item">
-                  <p class="plan-price-label">入会金</p>
-                  <p class="plan-price"><strong>100,000</strong>円</p>
+
+              <div class="plan-card featured">
+                <div class="plan-card-header">
+                  <h3 class="plan-name">
+                    Blue Privilege
+                    <span class="plan-name-ja">ブループリビレッジ</span>
+                  </h3>
+                  <div class="plan-tags">
+                    <span>特別会員</span>
+                    <span>優先紹介</span>
+                    <span>限定女性紹介</span>
+                  </div>
                 </div>
-                <div class="plan-price-item">
-                  <p class="plan-price-label">更新料</p>
-                  <p class="plan-price"><strong>10,000</strong>円</p>
+                <p class="plan-summary">Blue東京の最上位会員プランです。</p>
+                <div class="plan-desc">
+                  <p>
+                    Blue Memberではご紹介対象外となる特別ランクの女性を含め、すべてのランクの女性をご紹介いたします。
+                  </p>
+                  <p>
+                    さらに、Blue Privilege会員様には、ご希望条件に応じた優先的なご紹介や、HP非掲載女性・シークレット女性など、限られた会員様のみがご案内可能な特別な出会いもご提供しております。
+                  </p>
+                  <p>
+                    専任スタッフが一人ひとりのご要望を丁寧にお伺いし、質・品格・相性を重視したワンランク上のマッチングをサポートいたします。
+                  </p>
+                  <p>
+                    Blue東京が誇る、最高峰のメンバーシップです。
+                  </p>
                 </div>
-                <p class="added-content" style="margin-top: 20px; font-size: 14px; color: #666;">
-                  Blue Memberの特典に加え、優先的なご紹介、特別イベントへのご招待などの特典がございます。
-                </p>
+                <div class="plan-prices">
+                  <div class="plan-price-item">
+                    <p class="plan-price-label">入会金</p>
+                    <p class="plan-price"><strong>100,000</strong>円</p>
+                  </div>
+                  <div class="plan-price-item">
+                    <p class="plan-price-label">更新料</p>
+                    <p class="plan-price"><strong>10,000</strong>円</p>
+                  </div>
+                </div>
               </div>
             </div>
 
