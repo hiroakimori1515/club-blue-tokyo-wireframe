@@ -149,6 +149,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
   padding: 16px 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -160,11 +161,15 @@ section {
   padding: 12px 24px;
   font-weight: bold;
   font-size: 14px;
+  flex-shrink: 0;
+  margin-right: 8px;
 }
 
 /* Global Navigation */
 .global-nav {
   display: none;
+  flex: 1;
+  min-width: 0;
 }
 
 .global-nav ul {
@@ -222,6 +227,8 @@ section {
 .header-cta {
   display: none;
   gap: 12px;
+  flex-shrink: 0;
+  margin-left: 8px;
 }
 
 .header-cta .btn {
