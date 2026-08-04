@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>料金プラン｜Club Blue Tokyo - ワイヤーフレーム</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260804">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260804g">
   <style>
     .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
     .page-title { font-size: 36px; margin-bottom: 16px; }
@@ -28,31 +28,31 @@
     
     /* プラン比較カード */
     .plan-comparison { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 40px; align-items: stretch; }
-    .plan-box { border: 2px solid #333; background-color: #fff; display: flex; flex-direction: column; }
-    .plan-box.recommended { border-width: 3px; }
-    .plan-header { text-align: center; padding: 28px 24px 20px; border-bottom: 1px solid #ddd; }
+    .plan-box { border: 3px solid #333; background-color: #fff; display: flex; flex-direction: column; }
+    .plan-box.recommended { position: relative; }
+    .plan-box.recommended::before { content: "おすすめ"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 4px 20px; font-size: 14px; }
+    .plan-header { background-color: #333; color: #fff; padding: 24px; text-align: center; }
     .plan-header h3 { font-size: 24px; margin-bottom: 4px; }
-    .plan-name-ja { display: block; font-size: 14px; color: #666; font-weight: normal; margin-top: 4px; }
+    .plan-name-ja { display: block; font-size: 14px; opacity: 0.85; font-weight: normal; margin-top: 4px; }
     .plan-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
     .plan-tags span {
       display: inline-block;
       padding: 6px 12px;
-      border: 2px solid #333;
+      border: 1px solid #fff;
       font-size: 13px;
       font-weight: bold;
-      background-color: #f8f8f8;
     }
-    .plan-box.recommended .plan-tags span { background-color: #333; color: #fff; }
-    .plan-body { padding: 28px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+    .plan-body { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
     .plan-summary { font-size: 15px; line-height: 1.8; text-align: center; margin-bottom: 20px; font-weight: bold; }
     .plan-desc { font-size: 14px; line-height: 1.9; margin-bottom: 24px; flex-grow: 1; }
     .plan-desc p { margin-bottom: 14px; }
     .plan-desc p:last-child { margin-bottom: 0; }
-    .plan-prices { border-top: 1px solid #ddd; padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: center; margin-bottom: 24px; }
-    .plan-prices .label { font-size: 14px; color: #666; margin-bottom: 4px; }
-    .plan-prices .price { font-size: 20px; }
-    .plan-prices .price strong { font-size: 32px; }
-    .plan-cta { text-align: center; }
+    .plan-price-row { text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .plan-price-row:last-of-type { margin-bottom: 24px; }
+    .plan-price-row .label { font-size: 14px; color: #666; margin-bottom: 4px; }
+    .plan-price-row .price { font-size: 36px; font-weight: bold; }
+    .plan-price-row .price span { font-size: 18px; }
+    .plan-cta { text-align: center; margin-top: auto; }
 
     /* 紹介料セクション */
     .rank-fee-grid {
@@ -213,15 +213,13 @@
                   まずはBlue Memberとして、Blue東京ならではの安心・安全で質の高い出会いをご体感ください。
                 </p>
               </div>
-              <div class="plan-prices">
-                <div>
-                  <p class="label">入会金</p>
-                  <p class="price"><strong>50,000</strong>円</p>
-                </div>
-                <div>
-                  <p class="label">更新料</p>
-                  <p class="price"><strong>10,000</strong>円</p>
-                </div>
+              <div class="plan-price-row">
+                <p class="label">入会金</p>
+                <p class="price"><strong>50,000</strong><span>円</span></p>
+              </div>
+              <div class="plan-price-row">
+                <p class="label">更新料</p>
+                <p class="price"><strong>10,000</strong><span>円</span></p>
               </div>
               <div class="plan-cta">
                 <a href="contact.html" class="btn btn-primary">Blue Memberで登録</a>
@@ -257,15 +255,13 @@
                   Blue東京が誇る、最高峰のメンバーシップです。
                 </p>
               </div>
-              <div class="plan-prices">
-                <div>
-                  <p class="label">入会金</p>
-                  <p class="price"><strong>100,000</strong>円</p>
-                </div>
-                <div>
-                  <p class="label">更新料</p>
-                  <p class="price"><strong>10,000</strong>円</p>
-                </div>
+              <div class="plan-price-row">
+                <p class="label">入会金</p>
+                <p class="price"><strong>100,000</strong><span>円</span></p>
+              </div>
+              <div class="plan-price-row">
+                <p class="label">更新料</p>
+                <p class="price"><strong>10,000</strong><span>円</span></p>
               </div>
               <div class="plan-cta">
                 <a href="contact.html" class="btn btn-primary">Blue Privilegeで登録</a>
