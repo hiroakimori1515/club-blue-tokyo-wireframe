@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員ログイン｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; padding: 40px 20px; }
+    .login-container { width: 100%; max-width: 480px; }
+    
+    .login-logo { text-align: center; margin-bottom: 40px; }
+    .login-logo .logo-placeholder { display: inline-block; background-color: #fff; padding: 16px 32px; border: 2px solid #333; }
+    
+    .login-box { background-color: #fff; border: 2px solid #333; padding: 48px 40px; }
+    .login-box h1 { font-size: 24px; text-align: center; margin-bottom: 32px; }
+    
+    .form-group { margin-bottom: 24px; }
+    .form-label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+    .form-input { width: 100%; padding: 14px 16px; border: 1px solid #ddd; font-size: 16px; }
+    .form-input:focus { outline: none; border-color: #333; }
+    
+    .form-checkbox { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .form-checkbox input { width: 18px; height: 18px; }
+    .form-checkbox label { font-size: 14px; }
+    
+    .login-submit { margin-bottom: 24px; }
+    .login-submit .btn { width: 100%; }
+    
+    .login-links { text-align: center; }
+    .login-links a { display: block; font-size: 14px; color: #666; margin-bottom: 12px; }
+    .login-links a:hover { color: #333; }
+    
+    .login-divider { text-align: center; margin: 32px 0; position: relative; }
+    .login-divider::before { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background-color: #ddd; }
+    .login-divider span { background-color: #fff; padding: 0 16px; position: relative; color: #999; font-size: 14px; }
+    
+    .login-register { text-align: center; }
+    .login-register p { font-size: 14px; color: #666; margin-bottom: 16px; }
+    .login-register .btn { margin: 8px; }
+    
+    .back-link { text-align: center; margin-top: 32px; }
+    .back-link a { font-size: 14px; color: #666; }
+  </style>
+</head>
+<body>
+
+  <main class="login-page">
+    <div class="login-container">
+      <span class="section-label" style="display: block; text-align: center; margin-bottom: 24px;">PAGE: 会員ログイン</span>
+      
+      <div class="login-logo">
+        <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      </div>
+
+      <div class="login-box">
+        <h1>会員ログイン</h1>
+        
+        <form>
+          <div class="form-group">
+            <label class="form-label">メールアドレス</label>
+            <input type="email" class="form-input" placeholder="登録メールアドレスを入力">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">パスワード</label>
+            <input type="password" class="form-input" placeholder="パスワードを入力">
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="remember">
+            <label for="remember">ログイン状態を保持する</label>
+          </div>
+
+          <div class="login-submit">
+            <button type="submit" class="btn btn-primary btn-large">ログイン</button>
+          </div>
+        </form>
+
+        <div class="login-links">
+          <a href="#" class="added-content">パスワードをお忘れの方</a>
+          <a href="#" class="added-content">メールアドレスをお忘れの方</a>
+        </div>
+
+        <div class="login-divider">
+          <span>または</span>
+        </div>
+
+        <div class="login-register">
+          <p>まだ会員登録がお済みでない方</p>
+          <a href="male-members.html" class="btn">男性会員登録</a>
+          <a href="female-recruitment.html" class="btn">女性会員登録</a>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="../index.html">← トップページに戻る</a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

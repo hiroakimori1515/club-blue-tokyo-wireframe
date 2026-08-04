@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員情報｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .member-header { background-color: #333; color: #fff; }
+    .member-header .logo-placeholder { background-color: #fff; color: #333; }
+    .member-header .global-nav a { color: #fff; }
+    .member-header .btn { border-color: #fff; color: #fff; }
+    .member-header .btn-primary { background-color: #fff; color: #333; }
+    
+    .account-page { padding: 40px 0 80px; background-color: #f5f5f5; min-height: calc(100vh - 80px); }
+    .account-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    
+    .page-header { margin-bottom: 32px; }
+    .page-header h1 { font-size: 28px; margin-bottom: 8px; }
+    .page-header p { color: #666; font-size: 14px; }
+    
+    .account-section { background-color: #fff; border: 1px solid #ddd; margin-bottom: 24px; }
+    .account-section-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #eee; background-color: #f8f8f8; }
+    .account-section-header h2 { font-size: 18px; }
+    .account-section-body { padding: 24px; }
+    
+    .info-table { width: 100%; }
+    .info-table tr { border-bottom: 1px solid #eee; }
+    .info-table tr:last-child { border-bottom: none; }
+    .info-table th { padding: 16px 0; text-align: left; font-size: 14px; color: #666; width: 150px; font-weight: normal; vertical-align: top; }
+    .info-table td { padding: 16px 0; font-size: 15px; }
+    
+    .plan-info { display: flex; align-items: center; gap: 16px; }
+    .plan-badge { padding: 8px 20px; background-color: #333; color: #fff; font-size: 14px; }
+    .plan-badge.privilege { background-color: #c2255c; }
+    .plan-expiry { font-size: 14px; color: #666; }
+    
+    .password-dots { letter-spacing: 4px; }
+    
+    .danger-zone { background-color: #fff5f5; border-color: #ffc9c9; }
+    .danger-zone .account-section-header { background-color: #ffe3e3; border-color: #ffc9c9; }
+    .danger-zone .account-section-header h2 { color: #c92a2a; }
+    .danger-zone p { font-size: 14px; color: #666; margin-bottom: 16px; }
+    .danger-zone .btn { border-color: #e03131; color: #e03131; }
+    .danger-zone .btn:hover { background-color: #e03131; color: #fff; }
+    
+    @media (max-width: 768px) {
+      .info-table th { width: 120px; }
+      .plan-info { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header member-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="female-list.html">女性検索</a></li>
+          <li><a href="favorites.html">お気に入り</a></li>
+          <li><a href="messages.html">メッセージ</a></li>
+          <li><a href="history.html">セッティング履歴</a></li>
+          <li><a href="account.html" style="border-bottom: 2px solid #fff;">会員情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn btn-primary">ログアウト</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-page">
+    <div class="account-container">
+      <span class="section-label">会員専用ページ: 会員情報</span>
+      
+      <div class="page-header">
+        <h1>会員情報</h1>
+        <p class="added-content">登録情報の確認・変更ができます</p>
+      </div>
+
+      <div class="account-section">
+        <div class="account-section-header">
+          <h2>会員プラン</h2>
+          <a href="#" class="btn">プラン変更</a>
+        </div>
+        <div class="account-section-body">
+          <table class="info-table">
+            <tr>
+              <th>現在のプラン</th>
+              <td>
+                <div class="plan-info">
+                  <span class="plan-badge privilege added-content">Blue Privilege</span>
+                  <span class="plan-expiry added-content">有効期限: 2025年12月31日</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>会員ID</th>
+              <td class="added-content">BT-XXXXX</td>
+            </tr>
+            <tr>
+              <th>入会日</th>
+              <td class="added-content">2024年10月1日</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="account-section">
+        <div class="account-section-header">
+          <h2>基本情報</h2>
+          <a href="#" class="btn">編集</a>
+        </div>
+        <div class="account-section-body">
+          <table class="info-table">
+            <tr>
+              <th>お名前</th>
+              <td class="added-content">山田 太郎</td>
+            </tr>
+            <tr>
+              <th>フリガナ</th>
+              <td class="added-content">ヤマダ タロウ</td>
+            </tr>
+            <tr>
+              <th>生年月日</th>
+              <td class="added-content">19XX年XX月XX日</td>
+            </tr>
+            <tr>
+              <th>年齢</th>
+              <td class="added-content">XX歳</td>
+            </tr>
+            <tr>
+              <th>ご職業</th>
+              <td class="added-content">会社経営</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="account-section">
+        <div class="account-section-header">
+          <h2>連絡先情報</h2>
+          <a href="#" class="btn">編集</a>
+        </div>
+        <div class="account-section-body">
+          <table class="info-table">
+            <tr>
+              <th>メールアドレス</th>
+              <td class="added-content">yamada@example.com</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td class="added-content">090-XXXX-XXXX</td>
+            </tr>
+            <tr>
+              <th>ご住所</th>
+              <td class="added-content">東京都○○区○○X-X-X</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="account-section">
+        <div class="account-section-header">
+          <h2>ログイン情報</h2>
+          <a href="#" class="btn">パスワード変更</a>
+        </div>
+        <div class="account-section-body">
+          <table class="info-table">
+            <tr>
+              <th>メールアドレス</th>
+              <td class="added-content">yamada@example.com</td>
+            </tr>
+            <tr>
+              <th>パスワード</th>
+              <td class="password-dots">••••••••</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="account-section">
+        <div class="account-section-header">
+          <h2>希望条件</h2>
+          <a href="#" class="btn">編集</a>
+        </div>
+        <div class="account-section-body">
+          <table class="info-table">
+            <tr>
+              <th>希望年齢</th>
+              <td class="added-content">20代〜30代前半</td>
+            </tr>
+            <tr>
+              <th>希望エリア</th>
+              <td class="added-content">銀座・新橋、六本木、恵比寿</td>
+            </tr>
+            <tr>
+              <th>希望スタイル</th>
+              <td class="added-content">スレンダー、普通</td>
+            </tr>
+            <tr>
+              <th>その他希望</th>
+              <td class="added-content">特になし</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="account-section danger-zone">
+        <div class="account-section-header">
+          <h2>退会について</h2>
+        </div>
+        <div class="account-section-body">
+          <p class="added-content">
+            退会をご希望の場合は、下記ボタンより退会手続きを行ってください。<br>
+            退会後は会員情報が削除され、再度ご利用いただく場合は新規登録が必要です。
+          </p>
+          <a href="#" class="btn">退会手続きへ</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 0; background-color: #fff;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

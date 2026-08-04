@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コラム｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    
+    .column-page { padding: 60px 0 80px; }
+    .column-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    .column-categories { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+    .column-category { padding: 10px 20px; border: 1px solid #333; font-size: 14px; }
+    .column-category.active { background-color: #333; color: #fff; }
+    .column-category:hover { background-color: #f5f5f5; text-decoration: none; }
+    
+    .column-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
+    .column-card { border: 2px solid #333; background-color: #fff; }
+    .column-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .column-thumbnail { aspect-ratio: 16/10; background-color: #f5f5f5; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; }
+    .column-content { padding: 20px; }
+    .column-meta { display: flex; gap: 12px; margin-bottom: 12px; }
+    .column-tag { padding: 3px 10px; font-size: 11px; background-color: #f1f3f5; }
+    .column-date { font-size: 12px; color: #999; }
+    .column-title { font-size: 17px; font-weight: bold; line-height: 1.5; margin-bottom: 12px; }
+    .column-title a { color: #333; }
+    .column-title a:hover { text-decoration: underline; }
+    .column-excerpt { font-size: 13px; color: #666; line-height: 1.7; }
+    
+    .pagination { display: flex; justify-content: center; gap: 8px; }
+    .pagination a, .pagination span { padding: 10px 16px; border: 1px solid #ddd; font-size: 14px; }
+    .pagination a:hover { background-color: #f5f5f5; text-decoration: none; }
+    .pagination .current { background-color: #333; color: #fff; border-color: #333; }
+    
+    @media (max-width: 900px) {
+      .column-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .column-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html">料金案内</a></li>
+          <li><a href="column.html" style="border-bottom: 2px solid #333;">コラム</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn">お問い合わせ</a>
+        <a href="login.html" class="btn btn-primary">会員ログイン</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>コラム</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: コラム一覧</span>
+    <h1 class="page-title">コラム</h1>
+  </section>
+
+  <main class="column-page">
+    <div class="column-container">
+      
+      <div class="column-categories">
+        <a href="#" class="column-category active">すべて</a>
+        <a href="#" class="column-category">基礎知識</a>
+        <a href="#" class="column-category">比較</a>
+        <a href="#" class="column-category">料金</a>
+        <a href="#" class="column-category">安全性</a>
+      </div>
+
+      <div class="column-grid">
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">比較</span>
+              <span class="column-date added-content">2024.11.20</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">東京の交際クラブおすすめ比較</a></h2>
+            <p class="column-excerpt added-content">東京で人気の交際クラブを徹底比較。料金やサービス内容、安全性などの観点から...</p>
+          </div>
+        </article>
+
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">基礎知識</span>
+              <span class="column-date added-content">2024.11.15</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">パパ活との違い</a></h2>
+            <p class="column-excerpt added-content">交際クラブとパパ活の違いを解説。安全性やサポート体制の面から比較すると...</p>
+          </div>
+        </article>
+
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">基礎知識</span>
+              <span class="column-date added-content">2024.11.10</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">デートクラブとは</a></h2>
+            <p class="column-excerpt added-content">デートクラブ・交際クラブの基本を解説。どのようなサービスなのか...</p>
+          </div>
+        </article>
+
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">料金</span>
+              <span class="column-date added-content">2024.11.05</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">交際クラブの料金相場</a></h2>
+            <p class="column-excerpt added-content">交際クラブの料金相場を解説。入会金、紹介料、その他の費用について...</p>
+          </div>
+        </article>
+
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">安全性</span>
+              <span class="column-date added-content">2024.11.01</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">安全な交際クラブの選び方</a></h2>
+            <p class="column-excerpt added-content">安全な交際クラブを選ぶためのポイントを解説。確認すべき項目とは...</p>
+          </div>
+        </article>
+
+        <article class="column-card">
+          <div class="column-thumbnail">[サムネイル画像]</div>
+          <div class="column-content">
+            <div class="column-meta">
+              <span class="column-tag added-content">基礎知識</span>
+              <span class="column-date added-content">2024.10.25</span>
+            </div>
+            <h2 class="column-title"><a href="column-detail.html">交際クラブの利用の流れ</a></h2>
+            <p class="column-excerpt added-content">交際クラブを利用する際の流れを解説。登録から出会いまでのステップ...</p>
+          </div>
+        </article>
+      </div>
+
+      <nav class="pagination">
+        <span class="current">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">次へ</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

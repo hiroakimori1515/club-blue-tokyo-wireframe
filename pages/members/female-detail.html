@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>女性会員詳細｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .member-header { background-color: #333; color: #fff; }
+    .member-header .logo-placeholder { background-color: #fff; color: #333; }
+    .member-header .global-nav a { color: #fff; }
+    .member-header .btn { border-color: #fff; color: #fff; }
+    .member-header .btn-primary { background-color: #fff; color: #333; }
+    
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    
+    .detail-page { padding: 40px 0 80px; }
+    .detail-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    .detail-main { display: grid; grid-template-columns: 400px 1fr; gap: 48px; margin-bottom: 60px; }
+    
+    /* 写真ギャラリー */
+    .photo-gallery { }
+    .main-photo { aspect-ratio: 3/4; background-color: #f5f5f5; border: 2px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center; color: #666; font-size: 14px; margin-bottom: 16px; }
+    .photo-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .photo-thumb { aspect-ratio: 1; background-color: #f5f5f5; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #999; cursor: pointer; }
+    .photo-thumb:hover { border-color: #333; }
+    
+    /* プロフィール情報 */
+    .profile-info { }
+    .profile-header { margin-bottom: 32px; }
+    .profile-rank { display: inline-block; padding: 6px 16px; font-size: 14px; margin-bottom: 12px; border: 2px solid; }
+    .profile-rank.privilege { border-color: #f783ac; color: #c2255c; background-color: #ffdeeb; }
+    .profile-name { font-size: 32px; margin-bottom: 8px; }
+    .profile-name-kana { font-size: 14px; color: #666; }
+    
+    .profile-actions { display: flex; gap: 12px; margin-bottom: 32px; }
+    .profile-actions .btn { flex: 1; }
+    
+    .profile-table { width: 100%; margin-bottom: 32px; }
+    .profile-table tr { border-bottom: 1px solid #eee; }
+    .profile-table th { padding: 14px 0; text-align: left; font-size: 14px; color: #666; width: 120px; font-weight: normal; }
+    .profile-table td { padding: 14px 0; font-size: 15px; }
+    
+    .profile-section { margin-bottom: 32px; }
+    .profile-section h3 { font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #333; }
+    .profile-section p { font-size: 15px; line-height: 1.9; color: #444; }
+    
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .profile-tag { padding: 6px 14px; font-size: 13px; background-color: #f1f3f5; border: 1px solid #dee2e6; }
+    
+    /* セッティング料金 */
+    .setting-box { background-color: #f8f8f8; border: 2px solid #333; padding: 32px; text-align: center; }
+    .setting-box h3 { font-size: 18px; margin-bottom: 16px; }
+    .setting-price { font-size: 36px; font-weight: bold; margin-bottom: 8px; }
+    .setting-price span { font-size: 18px; }
+    .setting-note { font-size: 13px; color: #666; margin-bottom: 24px; }
+    
+    /* 関連女性 */
+    .related-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid #ddd; }
+    .related-section h2 { font-size: 24px; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .related-card { border: 1px solid #ddd; }
+    .related-card .card-image { aspect-ratio: 3/4; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999; }
+    .related-card .card-info { padding: 12px; }
+    .related-card .card-rank { font-size: 11px; padding: 3px 8px; border: 1px solid #4dabf7; color: #1864ab; background-color: #e7f5ff; display: inline-block; margin-bottom: 6px; }
+    .related-card .card-name { font-size: 14px; font-weight: bold; }
+    
+    @media (max-width: 900px) {
+      .detail-main { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header member-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="#">マイページ</a></li>
+          <li><a href="female-list.html">女性検索</a></li>
+          <li><a href="#">お気に入り</a></li>
+          <li><a href="#">メッセージ</a></li>
+          <li><a href="#">セッティング履歴</a></li>
+          <li><a href="#">会員情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn btn-primary">ログアウト</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <ol class="breadcrumb-list">
+      <li><a href="#">マイページ</a></li>
+      <li><a href="female-list.html">女性検索</a></li>
+      <li>プロフィール詳細</li>
+    </ol>
+  </nav>
+
+  <main class="detail-page">
+    <div class="detail-container">
+      <span class="section-label">会員専用ページ: 女性プロフィール詳細</span>
+      
+      <div class="detail-main">
+        <!-- 写真ギャラリー -->
+        <div class="photo-gallery">
+          <div class="main-photo">
+            [メイン写真]<br><br>
+            プライバシー保護のため<br>顔にぼかし加工
+          </div>
+          <div class="photo-thumbs">
+            <div class="photo-thumb">[写真1]</div>
+            <div class="photo-thumb">[写真2]</div>
+            <div class="photo-thumb">[写真3]</div>
+            <div class="photo-thumb">[写真4]</div>
+          </div>
+        </div>
+
+        <!-- プロフィール情報 -->
+        <div class="profile-info">
+          <div class="profile-header">
+            <span class="profile-rank privilege">Privilege Selection</span>
+            <h1 class="profile-name added-content">斉藤 るな</h1>
+            <p class="profile-name-kana added-content">サイトウ ルナ</p>
+          </div>
+
+          <div class="profile-actions">
+            <a href="#" class="btn btn-primary btn-large">セッティングを申し込む</a>
+            <a href="#" class="btn btn-large">お気に入りに追加</a>
+          </div>
+
+          <table class="profile-table">
+            <tr>
+              <th>年齢</th>
+              <td class="added-content">26歳</td>
+            </tr>
+            <tr>
+              <th>身長</th>
+              <td class="added-content">165cm</td>
+            </tr>
+            <tr>
+              <th>スタイル</th>
+              <td class="added-content">スレンダー</td>
+            </tr>
+            <tr>
+              <th>血液型</th>
+              <td class="added-content">A型</td>
+            </tr>
+            <tr>
+              <th>出身地</th>
+              <td class="added-content">東京都</td>
+            </tr>
+            <tr>
+              <th>職業</th>
+              <td class="added-content">会社員</td>
+            </tr>
+            <tr>
+              <th>お酒</th>
+              <td class="added-content">少し飲む</td>
+            </tr>
+            <tr>
+              <th>タバコ</th>
+              <td class="added-content">吸わない</td>
+            </tr>
+          </table>
+
+          <div class="profile-section">
+            <h3>自己紹介</h3>
+            <p class="added-content">
+              はじめまして。プロフィールをご覧いただきありがとうございます。<br><br>
+              都内で会社員をしています。休日は美術館巡りやカフェ巡りを楽しんでいます。<br><br>
+              落ち着いた雰囲気のお店でゆっくりお話しできる方とお会いできたら嬉しいです。<br><br>
+              どうぞよろしくお願いいたします。
+            </p>
+          </div>
+
+          <div class="profile-section">
+            <h3>趣味・特技</h3>
+            <div class="profile-tags">
+              <span class="profile-tag added-content">外国語（英語）</span>
+              <span class="profile-tag added-content">ゴルフ</span>
+              <span class="profile-tag added-content">美術館巡り</span>
+              <span class="profile-tag added-content">カフェ巡り</span>
+              <span class="profile-tag added-content">読書</span>
+            </div>
+          </div>
+
+          <div class="setting-box">
+            <h3>紹介料</h3>
+            <p class="setting-price"><span>¥</span>70,000<span>〜</span></p>
+            <p class="setting-note added-content">セッティング成立時にお支払いいただきます</p>
+            <a href="#" class="btn btn-primary btn-large">セッティングを申し込む</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 関連女性 -->
+      <section class="related-section">
+        <h2>この女性に似た会員</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <div class="card-image">[写真]</div>
+            <div class="card-info">
+              <span class="card-rank">Sapphire</span>
+              <p class="card-name added-content">田中 あいり</p>
+            </div>
+          </div>
+          <div class="related-card">
+            <div class="card-image">[写真]</div>
+            <div class="card-info">
+              <span class="card-rank">Royal Blue</span>
+              <p class="card-name added-content">山本 さくら</p>
+            </div>
+          </div>
+          <div class="related-card">
+            <div class="card-image">[写真]</div>
+            <div class="card-info">
+              <span class="card-rank">Infinity Blue</span>
+              <p class="card-name added-content">伊藤 めい</p>
+            </div>
+          </div>
+          <div class="related-card">
+            <div class="card-image">[写真]</div>
+            <div class="card-info">
+              <span class="card-rank">Sapphire</span>
+              <p class="card-name added-content">渡辺 りお</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="female-list.html" class="btn">女性検索に戻る</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 0;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

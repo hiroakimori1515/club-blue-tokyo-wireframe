@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問（FAQ）｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .page-subtitle { font-size: 18px; color: #666; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    .content-section { padding: 60px 0; }
+    
+    /* カテゴリタブ */
+    .faq-tabs { display: flex; gap: 0; border-bottom: 2px solid #333; margin-bottom: 40px; flex-wrap: wrap; }
+    .faq-tab { padding: 16px 32px; font-size: 16px; font-weight: bold; cursor: pointer; border: 2px solid #ddd; border-bottom: none; background-color: #f5f5f5; margin-bottom: -2px; }
+    .faq-tab.active { background-color: #fff; border-color: #333; border-bottom-color: #fff; }
+    
+    /* FAQリスト */
+    .faq-category { margin-bottom: 60px; }
+    .faq-category-title { font-size: 24px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #333; }
+    .faq-item { border: 2px solid #333; margin-bottom: 16px; }
+    .faq-question { width: 100%; background-color: #fff; border: none; padding: 24px 60px 24px 24px; text-align: left; font-size: 16px; font-weight: bold; cursor: pointer; position: relative; }
+    .faq-question::before { content: "Q."; margin-right: 12px; color: #333; }
+    .faq-question::after { content: "+"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 28px; font-weight: normal; }
+    .faq-question.active::after { content: "−"; }
+    .faq-answer { display: none; padding: 24px; background-color: #f8f8f8; border-top: 1px solid #ddd; line-height: 1.8; }
+    .faq-answer.active { display: block; }
+    .faq-answer::before { content: "A."; font-weight: bold; margin-right: 12px; color: #333; }
+    
+    .cta-box { background-color: #333; color: #fff; padding: 60px 40px; text-align: center; margin-top: 40px; }
+    .cta-box h3 { font-size: 24px; margin-bottom: 16px; }
+    .cta-box p { margin-bottom: 32px; }
+    .cta-box .btn { border-color: #fff; }
+    .cta-box .btn-primary { background-color: #fff; color: #333; }
+    
+    @media (max-width: 768px) {
+      .faq-tab { padding: 12px 20px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html">料金案内</a></li>
+          <li><a href="#">コラム</a></li>
+          <li><a href="faq.html" style="border-bottom: 2px solid #333;">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn">お問い合わせ</a>
+        <a href="#" class="btn btn-primary">会員ログイン</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>よくある質問</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: FAQ</span>
+    <h1 class="page-title">よくある質問</h1>
+    <p class="page-subtitle added-content">お問い合わせの前にご確認ください</p>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="content-section">
+
+        <!-- カテゴリタブ -->
+        <div class="faq-tabs">
+          <div class="faq-tab active">すべて</div>
+          <div class="faq-tab">ご利用について</div>
+          <div class="faq-tab">男性会員向け</div>
+          <div class="faq-tab">女性会員向け</div>
+          <div class="faq-tab">料金について</div>
+          <div class="faq-tab">安全性について</div>
+        </div>
+
+        <!-- ご利用について -->
+        <div class="faq-category" id="general">
+          <h2 class="faq-category-title">ご利用について</h2>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              入会審査はありますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                はい、すべての会員様に面談審査を実施しております。男性会員様は対面での面談を行い、ご希望やお人柄を確認させていただきます。女性会員様も同様に面談を行い、安全にご活動いただける方のみをご案内しております。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              匿名で利用できますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                プライバシー保護を徹底しておりますが、本人確認のため身分証明書のご提示は必要となります。ただし、お相手への個人情報開示は、ご本人の同意なく行うことはございません。ニックネームでの活動も可能です。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              地方在住でも利用できますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                はい、ご利用いただけます。面談については、東京のサロンへお越しいただくか、出張面談も可能です。活動エリアについてはご相談ください。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              交際クラブとは何ですか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                交際クラブは、会員制のマッチングサービスです。面談審査を通過した男性会員様と女性会員様の出会いをサポートいたします。当クラブでは、デートのセッティングまでをサポートし、その後の交際については当事者双方の自由意思にお任せしております。
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 男性会員向け -->
+        <div class="faq-category" id="male">
+          <h2 class="faq-category-title">男性会員向け</h2>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              どのような男性が登録していますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                30歳以上で社会的信用があり、女性への敬意を持てる紳士の方にご登録いただいております。経営者、医師、弁護士、会社員など、様々な職業の方がいらっしゃいます。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              Blue MemberとBlue Privilegeの違いは何ですか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                Blue Memberはスタンダードプランで、すべての女性会員のプロフィール閲覧やセッティングのご利用が可能です。Blue Privilegeは、Blue Memberの特典に加え、優先的なご紹介、特別イベントへのご招待、Privilege Selection会員へのアクセスなどの特典がございます。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              女性会員のプロフィールはどこまで見られますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                会員登録後、専用ページにてプロフィール写真、年齢、身長、職業、趣味、自己紹介などをご覧いただけます。なお、プライバシー保護のため、本名や連絡先などの個人情報は掲載しておりません。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              紹介料はいつ支払いますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                紹介料は、お相手とのセッティングが成立した時点でお支払いいただきます。プロフィールの閲覧やお問い合わせだけでは料金は発生しません。
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 女性会員向け -->
+        <div class="faq-category" id="female">
+          <h2 class="faq-category-title">女性会員向け</h2>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              登録費用はかかりますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                女性会員様は、登録費・撮影費ともに完全無料です。初期費用なしで安心して活動を始められます。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              顔出しなしでも登録できますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                はい、可能です。プロフィール写真はぼかしや加工を施すことができます。お顔を出したくない場合は、横顔や後ろ姿での撮影も可能です。身バレが心配な方もご安心ください。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              交際クラブは初めてなのですが大丈夫ですか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                もちろん大丈夫です。当クラブの女性会員の多くは未経験からのスタートです。専任スタッフが活動の流れやマナーなど、丁寧にサポートいたしますのでご安心ください。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              どのような男性が登録していますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                当クラブでは、30歳以上で社会的信用があり、女性への敬意を持てる紳士の方のみご登録いただいております。全員、対面での面談審査を通過しておりますのでご安心ください。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              活動頻度は自分で決められますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                はい、ご自身のペースで活動いただけます。週末だけ、月に数回だけなど、ご希望に合わせて調整可能です。無理な活動を強制することは一切ございません。
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 料金について -->
+        <div class="faq-category" id="pricing">
+          <h2 class="faq-category-title">料金について</h2>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              入会金以外にかかる費用はありますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                入会金のほかに、更新料（1年ごと）と、お相手をご紹介する際の紹介料がございます。それ以外の追加料金や隠れた費用は一切ございません。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              支払い方法を教えてください
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                現金、銀行振込、クレジットカードに対応しております。詳細は面談時にご案内いたします。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              退会した場合、返金はありますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                入会金・更新料は、サービス提供の対価としてお支払いいただいておりますので、原則として返金は行っておりません。詳細は利用規約をご確認ください。
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 安全性について -->
+        <div class="faq-category" id="safety">
+          <h2 class="faq-category-title">安全性について</h2>
+          
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              個人情報は安全に管理されていますか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                はい、お預かりした個人情報は厳重に管理し、第三者への開示は一切行いません。プライバシーポリシーに基づき、適切に取り扱っております。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              トラブルがあった場合はどうすればいいですか？
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                24時間サポート体制を整えておりますので、いつでもご連絡ください。お相手とのトラブルや、活動中のご不安など、スタッフが対応いたします。
+              </span>
+            </div>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" aria-expanded="false" itemprop="name">
+              身バレが心配です
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <span itemprop="text" class="added-content">
+                身バレ対策を徹底しております。プロフィール写真の加工、ニックネームでの活動、会員限定の閲覧制限など、プライバシー保護のための対策を講じています。ご不安な点があればお気軽にご相談ください。
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="design-note">
+          FAQ回答はすべて原稿にないため叩き台として作成。クライアント確認後に正式な回答に差し替え。
+          構造化データ（schema.org）を実装しやすいHTML構造で作成。
+        </div>
+
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h3 class="added-content">解決しない場合はお問い合わせください</h3>
+        <p class="added-content">こちらに掲載されていないご質問がございましたら、お気軽にお問い合わせください。</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary btn-large">お問い合わせ</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo-placeholder">[ロゴ] Club Blue Tokyo</div>
+          <p class="footer-description added-content">東京の交際クラブ Blue東京。完全面談制で安心・安全な出会いを。</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">サービス案内</h3>
+            <ul class="footer-nav-list">
+              <li><a href="about.html">Blue東京について</a></li>
+              <li><a href="male-members.html">男性会員案内</a></li>
+              <li><a href="pricing.html">料金プラン</a></li>
+              <li><a href="female-recruitment.html">女性会員募集</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">コンテンツ</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">お知らせ</a></li>
+              <li><a href="#">コラム</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">法務情報</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">運営会社情報</a></li>
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQアコーディオン
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(function(question) {
+      question.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const answer = this.nextElementSibling;
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.classList.toggle('active');
+        answer.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

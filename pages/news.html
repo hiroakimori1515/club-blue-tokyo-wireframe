@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    
+    .news-page { padding: 60px 0 80px; }
+    .news-container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    
+    .news-categories { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+    .news-category { padding: 10px 20px; border: 1px solid #333; font-size: 14px; }
+    .news-category.active { background-color: #333; color: #fff; }
+    .news-category:hover { background-color: #f5f5f5; text-decoration: none; }
+    
+    .news-list { margin-bottom: 48px; }
+    .news-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid #ddd; }
+    .news-item:hover { background-color: #f8f8f8; margin: 0 -20px; padding: 24px 20px; }
+    .news-date { flex-shrink: 0; font-size: 14px; color: #666; width: 100px; }
+    .news-tag { flex-shrink: 0; }
+    .news-tag span { display: inline-block; padding: 4px 12px; font-size: 12px; border: 1px solid #333; }
+    .news-title { flex-grow: 1; font-size: 16px; }
+    .news-title a { color: #333; }
+    .news-title a:hover { text-decoration: underline; }
+    
+    .pagination { display: flex; justify-content: center; gap: 8px; }
+    .pagination a, .pagination span { padding: 10px 16px; border: 1px solid #ddd; font-size: 14px; }
+    .pagination a:hover { background-color: #f5f5f5; text-decoration: none; }
+    .pagination .current { background-color: #333; color: #fff; border-color: #333; }
+    
+    @media (max-width: 768px) {
+      .news-item { flex-direction: column; gap: 8px; }
+      .news-date { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html">料金案内</a></li>
+          <li><a href="column.html">コラム</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn">お問い合わせ</a>
+        <a href="login.html" class="btn btn-primary">会員ログイン</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>お知らせ</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: お知らせ一覧</span>
+    <h1 class="page-title">お知らせ</h1>
+  </section>
+
+  <main class="news-page">
+    <div class="news-container">
+      
+      <div class="news-categories">
+        <a href="#" class="news-category active">すべて</a>
+        <a href="#" class="news-category">お知らせ</a>
+        <a href="#" class="news-category">キャンペーン</a>
+        <a href="#" class="news-category">メンテナンス</a>
+      </div>
+
+      <div class="news-list">
+        <div class="news-item added-content">
+          <span class="news-date">2024.12.01</span>
+          <span class="news-tag"><span>お知らせ</span></span>
+          <p class="news-title"><a href="news-detail.html">年末年始の営業について</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.11.15</span>
+          <span class="news-tag"><span>キャンペーン</span></span>
+          <p class="news-title"><a href="news-detail.html">冬季限定キャンペーンのお知らせ</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.11.01</span>
+          <span class="news-tag"><span>お知らせ</span></span>
+          <p class="news-title"><a href="news-detail.html">新規女性会員のご紹介を開始しました</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.10.20</span>
+          <span class="news-tag"><span>メンテナンス</span></span>
+          <p class="news-title"><a href="news-detail.html">システムメンテナンスのお知らせ（10/25）</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.10.01</span>
+          <span class="news-tag"><span>お知らせ</span></span>
+          <p class="news-title"><a href="news-detail.html">サービス内容の一部変更について</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.09.15</span>
+          <span class="news-tag"><span>お知らせ</span></span>
+          <p class="news-title"><a href="news-detail.html">会員専用ページのリニューアルについて</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.09.01</span>
+          <span class="news-tag"><span>キャンペーン</span></span>
+          <p class="news-title"><a href="news-detail.html">秋の入会キャンペーン実施中</a></p>
+        </div>
+        <div class="news-item added-content">
+          <span class="news-date">2024.08.01</span>
+          <span class="news-tag"><span>お知らせ</span></span>
+          <p class="news-title"><a href="news-detail.html">サイトをオープンしました</a></p>
+        </div>
+      </div>
+
+      <nav class="pagination">
+        <span class="current">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">次へ</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

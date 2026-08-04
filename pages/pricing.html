@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金プラン｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .page-subtitle { font-size: 18px; color: #666; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    .content-section { padding: 60px 0; }
+    .lead-text { font-size: 18px; line-height: 2; text-align: center; max-width: 800px; margin: 0 auto 40px; }
+    
+    /* 料金テーブル */
+    .pricing-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+    .pricing-table th, .pricing-table td { padding: 20px 24px; border: 2px solid #333; text-align: center; }
+    .pricing-table th { background-color: #333; color: #fff; font-size: 18px; }
+    .pricing-table td { background-color: #fff; }
+    .pricing-table .plan-name { font-size: 20px; font-weight: bold; }
+    .pricing-table .price { font-size: 28px; font-weight: bold; }
+    .pricing-table .price-label { font-size: 14px; color: #666; margin-bottom: 8px; }
+    
+    /* プラン比較カード */
+    .plan-comparison { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 60px; }
+    .plan-box { border: 3px solid #333; background-color: #fff; }
+    .plan-box.recommended { border-color: #333; position: relative; }
+    .plan-box.recommended::before { content: "おすすめ"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 4px 20px; font-size: 14px; }
+    .plan-header { background-color: #333; color: #fff; padding: 24px; text-align: center; }
+    .plan-header h3 { font-size: 24px; margin-bottom: 8px; }
+    .plan-header p { font-size: 14px; opacity: 0.8; }
+    .plan-body { padding: 32px; }
+    .plan-price-row { text-align: center; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #ddd; }
+    .plan-price-row .label { font-size: 14px; color: #666; margin-bottom: 4px; }
+    .plan-price-row .price { font-size: 36px; font-weight: bold; }
+    .plan-price-row .price span { font-size: 18px; }
+    .plan-features { margin-bottom: 24px; }
+    .plan-features li { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
+    .plan-features li::before { content: "✓"; color: #333; font-weight: bold; }
+    .plan-cta { text-align: center; }
+    
+    /* 紹介料セクション */
+    .rank-pricing { margin-bottom: 60px; }
+    .rank-table { width: 100%; border-collapse: collapse; }
+    .rank-table th, .rank-table td { padding: 20px 24px; border: 1px solid #ddd; }
+    .rank-table th { background-color: #f5f5f5; text-align: left; width: 40%; }
+    .rank-table td { text-align: right; font-size: 20px; font-weight: bold; }
+    .rank-table tr:nth-child(even) { background-color: #f8f8f8; }
+    
+    /* 注意事項 */
+    .notes-box { background-color: #f8f8f8; border: 1px solid #ddd; padding: 32px; margin-bottom: 40px; }
+    .notes-box h3 { font-size: 18px; margin-bottom: 16px; }
+    .notes-box ul { padding-left: 20px; }
+    .notes-box li { margin-bottom: 12px; font-size: 14px; color: #666; line-height: 1.8; }
+    
+    .cta-box { background-color: #333; color: #fff; padding: 60px 40px; text-align: center; margin-top: 40px; }
+    .cta-box h3 { font-size: 24px; margin-bottom: 16px; }
+    .cta-box p { margin-bottom: 32px; }
+    .cta-box .btn { border-color: #fff; }
+    .cta-box .btn-primary { background-color: #fff; color: #333; }
+    
+    @media (max-width: 768px) {
+      .plan-comparison { grid-template-columns: 1fr; }
+      .pricing-table { font-size: 14px; }
+      .pricing-table th, .pricing-table td { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html" style="border-bottom: 2px solid #333;">料金案内</a></li>
+          <li><a href="#">コラム</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn">お問い合わせ</a>
+        <a href="#" class="btn btn-primary">会員ログイン</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>料金プラン</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: 料金プラン</span>
+    <h1 class="page-title">料金プラン</h1>
+    <p class="page-subtitle added-content">シンプルで分かりやすい料金体系</p>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- リード文 -->
+      <section class="content-section">
+        <p class="lead-text added-content">
+          Club Blue Tokyoでは、シンプルで分かりやすい料金体系を<br>
+          ご用意しております。<br><br>
+          入会金・更新料と、お相手をご紹介する際の紹介料のみ。<br>
+          追加料金や隠れた費用は一切ございません。
+        </p>
+      </section>
+
+      <!-- 男性会員プラン -->
+      <section class="content-section" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
+        <span class="section-label">男性会員プラン</span>
+        <div class="section-header">
+          <h2 class="section-title">男性会員プラン</h2>
+        </div>
+
+        <div class="plan-comparison" style="max-width: 900px; margin: 0 auto 40px;">
+          <div class="plan-box">
+            <div class="plan-header">
+              <h3>Blue Member</h3>
+              <p class="added-content">スタンダードプラン</p>
+            </div>
+            <div class="plan-body">
+              <div class="plan-price-row">
+                <p class="label">入会金</p>
+                <p class="price"><strong>50,000</strong><span>円</span></p>
+              </div>
+              <div class="plan-price-row">
+                <p class="label">更新料（1年ごと）</p>
+                <p class="price"><strong>10,000</strong><span>円</span></p>
+              </div>
+              <ul class="plan-features added-content">
+                <li>すべての女性会員の閲覧</li>
+                <li>専任コンシェルジュによるサポート</li>
+                <li>会員専用ページへのアクセス</li>
+                <li>お相手とのセッティング</li>
+              </ul>
+              <div class="plan-cta">
+                <a href="#" class="btn btn-primary">Blue Memberで登録</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-box recommended">
+            <div class="plan-header">
+              <h3>Blue Privilege</h3>
+              <p class="added-content">プレミアムプラン</p>
+            </div>
+            <div class="plan-body">
+              <div class="plan-price-row">
+                <p class="label">入会金</p>
+                <p class="price"><strong>100,000</strong><span>円</span></p>
+              </div>
+              <div class="plan-price-row">
+                <p class="label">更新料（1年ごと）</p>
+                <p class="price"><strong>10,000</strong><span>円</span></p>
+              </div>
+              <ul class="plan-features added-content">
+                <li>Blue Memberの全特典</li>
+                <li>優先的なご紹介</li>
+                <li>特別イベントへのご招待</li>
+                <li>Privilege Selection会員へのアクセス</li>
+                <li>専用コンシェルジュ</li>
+              </ul>
+              <div class="plan-cta">
+                <a href="#" class="btn btn-primary">Blue Privilegeで登録</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="design-note">
+          プラン詳細の特典内容は原稿にないため、すべて赤文字で表示。クライアント確認後に正式な内容に差し替え。
+        </div>
+      </section>
+
+      <!-- 紹介料 -->
+      <section class="content-section">
+        <span class="section-label">紹介料</span>
+        <div class="section-header">
+          <h2 class="section-title">女性ランク別紹介料</h2>
+        </div>
+
+        <p class="text-center added-content" style="margin-bottom: 32px; font-size: 16px; color: #666;">
+          お相手をご紹介する際に、以下の紹介料をお支払いいただきます。
+        </p>
+
+        <div class="rank-pricing" style="max-width: 700px; margin: 0 auto;">
+          <table class="rank-table">
+            <tr>
+              <th>Azure</th>
+              <td>20,000円</td>
+            </tr>
+            <tr>
+              <th>Sapphire</th>
+              <td>30,000円</td>
+            </tr>
+            <tr>
+              <th>Royal Blue</th>
+              <td>40,000円</td>
+            </tr>
+            <tr>
+              <th>Infinity Blue</th>
+              <td>50,000円</td>
+            </tr>
+            <tr>
+              <th>Privilege Selection</th>
+              <td>70,000円〜</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="notes-box" style="max-width: 700px; margin: 40px auto;">
+          <h3>紹介料について</h3>
+          <ul class="added-content">
+            <li>紹介料は、女性会員をご紹介する際にお支払いいただく料金です。</li>
+            <li>お相手とのセッティングが成立した時点でお支払いいただきます。</li>
+            <li>Privilege Selectionは、特別な女性会員のみが該当するランクです。紹介料は70,000円〜となります。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 女性会員向け -->
+      <section class="content-section" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
+        <span class="section-label">女性会員</span>
+        <div class="section-header">
+          <h2 class="section-title">女性会員の料金</h2>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <div style="border: 3px solid #333; padding: 40px; background-color: #fff; margin-bottom: 32px;">
+            <p style="font-size: 20px; margin-bottom: 16px;">登録費</p>
+            <p style="font-size: 48px; font-weight: bold;">無料</p>
+          </div>
+          <div style="border: 3px solid #333; padding: 40px; background-color: #fff; margin-bottom: 32px;">
+            <p style="font-size: 20px; margin-bottom: 16px;">撮影費</p>
+            <p style="font-size: 48px; font-weight: bold;">無料</p>
+          </div>
+          <p class="added-content" style="font-size: 16px; color: #666; line-height: 2;">
+            女性会員様は、登録費・撮影費ともに無料です。<br>
+            初期費用なしで安心して活動を始められます。
+          </p>
+          <div style="margin-top: 32px;">
+            <a href="female-recruitment.html" class="btn btn-primary btn-large">女性会員募集ページへ</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 料金に関するご注意 -->
+      <section class="content-section">
+        <span class="section-label">ご注意事項</span>
+        <div class="section-header">
+          <h2 class="section-title">料金に関するご注意</h2>
+        </div>
+
+        <div class="notes-box" style="max-width: 800px; margin: 0 auto;">
+          <ul class="added-content">
+            <li>表示価格はすべて税込みです。</li>
+            <li>入会金は、面談審査通過後にお支払いいただきます。</li>
+            <li>更新料は、ご入会から1年ごとにお支払いいただきます。</li>
+            <li>紹介料は、お相手とのセッティングが成立した時点でお支払いいただきます。</li>
+            <li>お支払い方法は、現金・銀行振込・クレジットカードに対応しております。</li>
+            <li>料金は予告なく変更される場合がございます。</li>
+          </ul>
+        </div>
+
+        <div class="design-note">
+          料金に関する注意事項は原稿にないため、一般的な内容を叩き台として記載。クライアント確認必須。
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h3>まずはお気軽にお問い合わせください</h3>
+        <p class="added-content">料金やサービスについてご不明点がございましたら、お気軽にお問い合わせください。</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary btn-large">男性会員登録</a>
+          <a href="#" class="btn btn-large" style="color: #fff;">お問い合わせ</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo-placeholder">[ロゴ] Club Blue Tokyo</div>
+          <p class="footer-description added-content">東京の交際クラブ Blue東京。完全面談制で安心・安全な出会いを。</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">サービス案内</h3>
+            <ul class="footer-nav-list">
+              <li><a href="about.html">Blue東京について</a></li>
+              <li><a href="male-members.html">男性会員案内</a></li>
+              <li><a href="pricing.html">料金プラン</a></li>
+              <li><a href="female-recruitment.html">女性会員募集</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">コンテンツ</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">お知らせ</a></li>
+              <li><a href="#">コラム</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">法務情報</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">運営会社情報</a></li>
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

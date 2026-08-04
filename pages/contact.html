@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    
+    .contact-page { padding: 60px 0 80px; }
+    .contact-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    
+    .contact-intro { text-align: center; margin-bottom: 48px; }
+    .contact-intro p { font-size: 16px; line-height: 2; color: #666; }
+    
+    .contact-methods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 60px; }
+    .contact-method { border: 2px solid #333; padding: 32px; text-align: center; }
+    .contact-method h3 { font-size: 18px; margin-bottom: 16px; }
+    .contact-method .contact-value { font-size: 24px; font-weight: bold; margin-bottom: 12px; }
+    .contact-method p { font-size: 14px; color: #666; }
+    
+    .form-section { background-color: #f8f8f8; padding: 48px; border: 1px solid #ddd; }
+    .form-section h2 { font-size: 24px; margin-bottom: 32px; text-align: center; }
+    
+    .form-group { margin-bottom: 24px; }
+    .form-label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+    .form-label .required { color: #cc0000; margin-left: 8px; font-size: 12px; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border: 1px solid #ddd; font-size: 16px; background-color: #fff; }
+    .form-textarea { min-height: 200px; resize: vertical; }
+    .form-note { font-size: 12px; color: #666; margin-top: 8px; }
+    
+    .form-radio-group { display: flex; flex-wrap: wrap; gap: 16px; }
+    .form-radio { display: flex; align-items: center; gap: 8px; }
+    .form-radio input { width: 18px; height: 18px; }
+    
+    .form-checkbox { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
+    .form-checkbox input { width: 20px; height: 20px; margin-top: 2px; }
+    .form-checkbox label { font-size: 14px; line-height: 1.6; }
+    
+    .form-submit { text-align: center; margin-top: 32px; }
+    
+    @media (max-width: 768px) {
+      .contact-methods { grid-template-columns: 1fr; }
+      .form-section { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html">料金案内</a></li>
+          <li><a href="#">コラム</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn" style="border-bottom: 2px solid #333;">お問い合わせ</a>
+        <a href="login.html" class="btn btn-primary">会員ログイン</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>お問い合わせ</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: お問い合わせ</span>
+    <h1 class="page-title">お問い合わせ</h1>
+  </section>
+
+  <main class="contact-page">
+    <div class="contact-container">
+      
+      <div class="contact-intro">
+        <p class="added-content">
+          Club Blue Tokyoへのお問い合わせは、<br>
+          下記のお電話またはお問い合わせフォームより承っております。<br>
+          お気軽にご連絡ください。
+        </p>
+      </div>
+
+      <div class="contact-methods">
+        <div class="contact-method">
+          <h3>お電話でのお問い合わせ</h3>
+          <p class="contact-value added-content">03-XXXX-XXXX</p>
+          <p class="added-content">受付時間：10:00〜22:00</p>
+        </div>
+        <div class="contact-method">
+          <h3>メールでのお問い合わせ</h3>
+          <p class="contact-value added-content">info@example.com</p>
+          <p class="added-content">24時間受付</p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>お問い合わせフォーム</h2>
+        
+        <form>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ種別<span class="required">必須</span></label>
+            <div class="form-radio-group">
+              <label class="form-radio"><input type="radio" name="type" checked> 男性会員登録について</label>
+              <label class="form-radio"><input type="radio" name="type"> 女性会員登録について</label>
+              <label class="form-radio"><input type="radio" name="type"> 料金について</label>
+              <label class="form-radio"><input type="radio" name="type"> その他</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">お名前<span class="required">必須</span></label>
+            <input type="text" class="form-input" placeholder="例：山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">フリガナ<span class="required">必須</span></label>
+            <input type="text" class="form-input" placeholder="例：ヤマダ タロウ">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">メールアドレス<span class="required">必須</span></label>
+            <input type="email" class="form-input" placeholder="例：example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">電話番号</label>
+            <input type="tel" class="form-input" placeholder="例：090-1234-5678">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">年齢<span class="required">必須</span></label>
+            <select class="form-select">
+              <option>選択してください</option>
+              <option>20代</option>
+              <option>30代</option>
+              <option>40代</option>
+              <option>50代</option>
+              <option>60代以上</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容<span class="required">必須</span></label>
+            <textarea class="form-textarea" placeholder="お問い合わせ内容をご記入ください"></textarea>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="privacy">
+            <label for="privacy" class="added-content">
+              <a href="privacy.html" style="text-decoration: underline;">プライバシーポリシー</a>に同意の上、送信してください。
+            </label>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large">送信する</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="design-note" style="margin-top: 40px;">
+        【実装メモ】フォーム送信後は確認画面→完了画面の遷移を想定。スパム対策としてreCAPTCHA導入を推奨。
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo-placeholder">[ロゴ] Club Blue Tokyo</div>
+          <p class="footer-description added-content">東京の交際クラブ Blue東京。完全面談制で安心・安全な出会いを。</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">サービス案内</h3>
+            <ul class="footer-nav-list">
+              <li><a href="about.html">Blue東京について</a></li>
+              <li><a href="male-members.html">男性会員案内</a></li>
+              <li><a href="pricing.html">料金プラン</a></li>
+              <li><a href="female-recruitment.html">女性会員募集</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">法務情報</h3>
+            <ul class="footer-nav-list">
+              <li><a href="company.html">運営会社情報</a></li>
+              <li><a href="terms.html">利用規約</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

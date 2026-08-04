@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue東京について｜Club Blue Tokyo - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .page-hero { background-color: #f5f5f5; padding: 60px 20px; text-align: center; border-bottom: 2px solid #333; }
+    .page-title { font-size: 36px; margin-bottom: 16px; }
+    .page-subtitle { font-size: 18px; color: #666; }
+    .breadcrumb { padding: 16px 20px; background-color: #f8f8f8; border-bottom: 1px solid #ddd; }
+    .breadcrumb-list { display: flex; gap: 8px; max-width: 1200px; margin: 0 auto; font-size: 14px; }
+    .breadcrumb-list li::after { content: ">"; margin-left: 8px; color: #999; }
+    .breadcrumb-list li:last-child::after { content: ""; }
+    .content-section { padding: 80px 0; }
+    .lead-text { font-size: 20px; line-height: 2.2; text-align: center; max-width: 800px; margin: 0 auto 40px; }
+    
+    /* コンセプトセクション */
+    .concept-section { background-color: #f8f8f8; padding: 80px 20px; text-align: center; }
+    .concept-title { font-size: 32px; margin-bottom: 48px; }
+    .concept-list { display: flex; flex-direction: column; gap: 24px; max-width: 500px; margin: 0 auto 48px; }
+    .concept-list li { font-size: 20px; }
+    .concept-footer { font-size: 20px; }
+    
+    /* 特徴グリッド */
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 60px; }
+    .feature-card { border: 2px solid #333; padding: 40px 24px; text-align: center; }
+    .feature-number { font-size: 14px; color: #666; margin-bottom: 12px; }
+    .feature-icon { width: 80px; height: 80px; background-color: #f5f5f5; border: 2px dashed #999; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
+    .feature-card h3 { font-size: 20px; margin-bottom: 16px; }
+    .feature-card p { font-size: 14px; color: #666; line-height: 1.8; }
+    
+    /* ミッション */
+    .mission-section { background-color: #333; color: #fff; padding: 80px 20px; text-align: center; }
+    .mission-title { font-size: 28px; margin-bottom: 32px; }
+    .mission-text { font-size: 18px; line-height: 2.2; max-width: 700px; margin: 0 auto; }
+    
+    /* 代表メッセージ */
+    .message-section { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; max-width: 900px; margin: 0 auto; }
+    .message-image { background-color: #f5f5f5; border: 2px dashed #999; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: #999; font-size: 14px; }
+    .message-content h3 { font-size: 24px; margin-bottom: 24px; }
+    .message-content p { font-size: 15px; line-height: 2; margin-bottom: 20px; color: #666; }
+    .message-name { font-size: 16px; margin-top: 32px; }
+    .message-name strong { font-size: 20px; display: block; margin-top: 8px; }
+    
+    /* 運営体制 */
+    .operation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px; }
+    .operation-card { border: 2px solid #333; padding: 32px; }
+    .operation-card h3 { font-size: 18px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #ddd; }
+    .operation-card p { font-size: 14px; color: #666; line-height: 1.8; }
+    
+    .cta-box { background-color: #333; color: #fff; padding: 60px 40px; text-align: center; margin-top: 40px; }
+    .cta-box h3 { font-size: 24px; margin-bottom: 16px; }
+    .cta-box p { margin-bottom: 32px; }
+    .cta-box .btn { border-color: #fff; }
+    .cta-box .btn-primary { background-color: #fff; color: #333; }
+    
+    @media (max-width: 1024px) {
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .message-section { grid-template-columns: 1fr; }
+      .message-image { height: 300px; }
+    }
+    @media (max-width: 768px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .operation-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="../index.html">TOP</a></li>
+          <li><a href="about.html" style="border-bottom: 2px solid #333;">Blue東京について</a></li>
+          <li><a href="male-members.html">男性会員案内</a></li>
+          <li><a href="female-recruitment.html">女性会員募集</a></li>
+          <li><a href="#">女性プロフィール</a></li>
+          <li><a href="pricing.html">料金案内</a></li>
+          <li><a href="#">コラム</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn">お問い合わせ</a>
+        <a href="#" class="btn btn-primary">会員ログイン</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li>Blue東京について</li>
+    </ol>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-label">PAGE: Blue東京について</span>
+    <h1 class="page-title">Blue東京について</h1>
+    <p class="page-subtitle added-content">品格ある出会いを、東京から。</p>
+  </section>
+
+  <main>
+
+    <!-- コンセプト -->
+    <section class="concept-section">
+      <div class="container">
+        <span class="section-label">CONCEPT</span>
+        <h2 class="concept-title">Blueという名前に込めた想い</h2>
+        
+        <p style="font-size: 18px; margin-bottom: 40px;">Blueには、</p>
+        
+        <ul class="concept-list">
+          <li>・運命的な出会い</li>
+          <li>・新しい人生との出会い</li>
+          <li>・新たな可能性との出会い</li>
+          <li>・心が動く感情との出会い</li>
+        </ul>
+        
+        <p class="concept-footer">という想いを込めています。</p>
+        
+        <div class="image-placeholder" style="max-width: 600px; margin: 60px auto 0; min-height: 200px;">
+          [イメージ画像：抽象的なブルーのグラデーション]
+        </div>
+      </div>
+    </section>
+
+    <!-- ミッション -->
+    <section class="mission-section">
+      <span class="section-label" style="background-color: #fff; color: #333;">MISSION</span>
+      <h2 class="mission-title added-content">私たちが大切にしていること</h2>
+      <p class="mission-text added-content">
+        Club Blue Tokyoは、単なる出会いの場ではありません。<br><br>
+        人と人との繋がりを大切にし、<br>
+        双方の人格と意思を尊重した<br>
+        品格ある出会いをご提供することを使命としています。<br><br>
+        安心・安全を第一に、<br>
+        お一人おひとりに寄り添ったサービスを心がけています。
+      </p>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section class="content-section">
+      <div class="container">
+        <span class="section-label">選ばれる理由</span>
+        <div class="section-header">
+          <h2 class="section-title">Blue東京が選ばれる理由</h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <p class="feature-number">01</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>完全面談制</h3>
+            <p class="added-content">すべての会員様と直接お会いし、ご希望やお人柄を確認いたします。書類審査だけでなく、対面でのコミュニケーションを重視しています。</p>
+          </div>
+          <div class="feature-card">
+            <p class="feature-number">02</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>安心・安全な運営体制</h3>
+            <p class="added-content">本人確認・身分証確認を徹底し、反社会的勢力を排除。24時間サポート体制で、安心して活動いただけます。</p>
+          </div>
+          <div class="feature-card">
+            <p class="feature-number">03</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>人柄と品格を重視</h3>
+            <p class="added-content">経済力や容姿だけでなく、人柄や品格を重視した審査を行っています。双方にとって価値のある出会いをご提供します。</p>
+          </div>
+          <div class="feature-card">
+            <p class="feature-number">04</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>専任コンシェルジュ</h3>
+            <p class="added-content">お一人おひとりに専任のコンシェルジュがつき、ご希望に沿ったお相手をご紹介。初めての方も安心してご利用いただけます。</p>
+          </div>
+          <div class="feature-card">
+            <p class="feature-number">05</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>身バレ対策の徹底</h3>
+            <p class="added-content">プライバシー保護を最優先に考え、身バレ対策を徹底しています。安心して活動いただける環境を整えています。</p>
+          </div>
+          <div class="feature-card">
+            <p class="feature-number">06</p>
+            <div class="feature-icon">[icon]</div>
+            <h3>会員限定紹介</h3>
+            <p class="added-content">審査を通過した会員様のみが、女性プロフィールを閲覧可能。一般に公開されないプライベートな環境でのご紹介です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 代表メッセージ -->
+    <section class="content-section" style="background-color: #f8f8f8;">
+      <div class="container">
+        <span class="section-label">代表メッセージ</span>
+        <div class="section-header">
+          <h2 class="section-title">代表からのご挨拶</h2>
+        </div>
+
+        <div class="message-section">
+          <div class="message-image">
+            [代表者写真]<br><br>
+            または抽象的なイメージ画像
+          </div>
+          <div class="message-content">
+            <h3 class="added-content">本当に価値のある出会いを</h3>
+            <p class="added-content">
+              Club Blue Tokyoのウェブサイトをご覧いただき、誠にありがとうございます。
+            </p>
+            <p class="added-content">
+              当クラブは「品格ある出会い」をコンセプトに、東京を拠点として活動しております。
+              単なるマッチングサービスではなく、お一人おひとりのご希望やお人柄を理解した上で、
+              本当に価値のある出会いをご提供することを心がけています。
+            </p>
+            <p class="added-content">
+              完全面談制を採用し、すべての会員様と直接お会いすることで、
+              安心・安全なサービスを実現しています。
+              初めて交際クラブをご利用される方も、どうぞご安心ください。
+            </p>
+            <p class="added-content">
+              皆様との出会いを心よりお待ちしております。
+            </p>
+            <p class="message-name added-content">
+              Club Blue Tokyo<br>
+              <strong>代表 ○○ ○○</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="design-note">
+          代表メッセージは原稿にないため叩き台として作成。代表者名・写真掲載可否はクライアント確認必須。
+        </div>
+      </div>
+    </section>
+
+    <!-- 運営体制 -->
+    <section class="content-section">
+      <div class="container">
+        <span class="section-label">運営体制</span>
+        <div class="section-header">
+          <h2 class="section-title">安心への取り組み</h2>
+        </div>
+
+        <div class="operation-grid">
+          <div class="operation-card">
+            <h3>本人確認</h3>
+            <p class="added-content">ご登録時に身分証明書による本人確認を実施しています。なりすましや虚偽登録を防止し、信頼できる会員様のみをご案内します。</p>
+          </div>
+          <div class="operation-card">
+            <h3>完全予約制</h3>
+            <p class="added-content">面談は完全予約制で実施。プライバシーに配慮した環境で、じっくりとお話をお伺いいたします。</p>
+          </div>
+          <div class="operation-card">
+            <h3>身分証確認</h3>
+            <p class="added-content">年齢確認・身元確認を徹底し、未成年者の登録を防止。法令を遵守した運営を行っています。</p>
+          </div>
+          <div class="operation-card">
+            <h3>個人情報保護</h3>
+            <p class="added-content">お預かりした個人情報は厳重に管理し、第三者への開示は一切行いません。プライバシーポリシーに基づき適切に取り扱います。</p>
+          </div>
+          <div class="operation-card">
+            <h3>24時間サポート</h3>
+            <p class="added-content">活動中のご不安やトラブルには、24時間体制でサポート。いつでもご相談いただける環境を整えています。</p>
+          </div>
+          <div class="operation-card">
+            <h3>反社会的勢力排除</h3>
+            <p class="added-content">反社会的勢力との関係を一切排除し、健全な運営を行っています。該当する方のご登録はお断りしております。</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="#" class="btn added-content">プライバシーポリシーを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>まずはお気軽にお問い合わせください</h3>
+      <p class="added-content">ご不明点やご質問がございましたら、お気軽にお問い合わせください。</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="male-members.html" class="btn btn-primary btn-large">男性会員案内</a>
+        <a href="female-recruitment.html" class="btn btn-large" style="color: #fff;">女性会員募集</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo-placeholder">[ロゴ] Club Blue Tokyo</div>
+          <p class="footer-description added-content">東京の交際クラブ Blue東京。完全面談制で安心・安全な出会いを。</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">サービス案内</h3>
+            <ul class="footer-nav-list">
+              <li><a href="about.html">Blue東京について</a></li>
+              <li><a href="male-members.html">男性会員案内</a></li>
+              <li><a href="pricing.html">料金プラン</a></li>
+              <li><a href="female-recruitment.html">女性会員募集</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">コンテンツ</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">お知らせ</a></li>
+              <li><a href="#">コラム</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-section">
+            <h3 class="footer-nav-title">法務情報</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#">運営会社情報</a></li>
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

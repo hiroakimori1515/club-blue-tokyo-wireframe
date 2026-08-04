@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>女性会員検索｜Club Blue Tokyo 会員専用ページ - ワイヤーフレーム</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* 会員専用ページ共通 */
+    .member-header { background-color: #333; color: #fff; }
+    .member-header .header-inner { border-bottom: none; }
+    .member-header .logo-placeholder { background-color: #fff; color: #333; }
+    .member-header .global-nav a { color: #fff; }
+    .member-header .btn { border-color: #fff; color: #fff; }
+    .member-header .btn-primary { background-color: #fff; color: #333; }
+    
+    /* メインレイアウト */
+    .member-page { display: flex; min-height: calc(100vh - 80px); }
+    
+    /* サイドバー */
+    .sidebar { width: 280px; background-color: #f8f8f8; border-right: 1px solid #ddd; flex-shrink: 0; padding: 24px; }
+    .sidebar-title { font-size: 18px; font-weight: bold; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #333; }
+    .filter-group { margin-bottom: 20px; }
+    .filter-label { font-size: 13px; font-weight: bold; margin-bottom: 8px; display: block; color: #666; }
+    .filter-select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; font-size: 14px; background-color: #fff; }
+    .filter-range { display: flex; align-items: center; gap: 8px; }
+    .filter-range select { flex: 1; padding: 10px 8px; border: 1px solid #ddd; font-size: 14px; }
+    .filter-range span { color: #999; }
+    .filter-input { width: 100%; padding: 10px 12px; border: 1px solid #ddd; font-size: 14px; }
+    .filter-note { font-size: 11px; color: #999; margin-top: 8px; line-height: 1.6; }
+    .filter-button { width: 100%; padding: 14px; background-color: #333; color: #fff; border: none; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 24px; }
+    .filter-button:hover { background-color: #555; }
+    
+    /* メインコンテンツ */
+    .main-content { flex: 1; padding: 24px 32px; background-color: #fff; }
+    .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #ddd; }
+    .page-title-area h1 { font-size: 24px; margin-bottom: 8px; }
+    .page-title-area p { font-size: 14px; color: #666; }
+    .pagination-info { text-align: right; }
+    .pagination-info .page-nav { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .pagination-info .page-nav a { padding: 8px 16px; border: 1px solid #ddd; font-size: 14px; }
+    .pagination-info .page-nav a:hover { background-color: #f5f5f5; text-decoration: none; }
+    .pagination-info .page-count { font-size: 14px; color: #666; }
+    
+    /* 女性会員グリッド */
+    .female-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .female-card { border: 1px solid #ddd; background-color: #fff; position: relative; }
+    .female-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    
+    /* カードラベル */
+    .card-label { position: absolute; top: 8px; left: 8px; padding: 4px 10px; font-size: 11px; font-weight: bold; z-index: 1; }
+    .card-label.new { background-color: #ff6b6b; color: #fff; }
+    .card-label.recommend { background-color: #4dabf7; color: #fff; }
+    .card-label.pickup { background-color: #ffd43b; color: #333; }
+    .card-label.premium { background-color: #9775fa; color: #fff; }
+    
+    /* カード画像 */
+    .card-image { position: relative; aspect-ratio: 3/4; background-color: #f5f5f5; overflow: hidden; }
+    .card-image .image-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999; text-align: center; padding: 10px; background-color: #e9e9e9; }
+    .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 40px 12px 12px; display: flex; gap: 8px; }
+    .card-overlay .btn-small { flex: 1; padding: 8px 4px; font-size: 11px; text-align: center; border: 1px solid #fff; color: #fff; background: transparent; }
+    .card-overlay .btn-small:hover { background-color: rgba(255,255,255,0.2); text-decoration: none; }
+    
+    /* カード情報 */
+    .card-info { padding: 12px; }
+    .card-rank { display: inline-block; padding: 4px 10px; font-size: 11px; margin-bottom: 8px; border: 1px solid; }
+    .card-rank.azure { border-color: #74c0fc; color: #1c7ed6; background-color: #e7f5ff; }
+    .card-rank.sapphire { border-color: #4dabf7; color: #1864ab; background-color: #d0ebff; }
+    .card-rank.royal { border-color: #5c7cfa; color: #364fc7; background-color: #dbe4ff; }
+    .card-rank.infinity { border-color: #7950f2; color: #5f3dc4; background-color: #e5dbff; }
+    .card-rank.privilege { border-color: #f783ac; color: #c2255c; background-color: #ffdeeb; }
+    .card-name { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .card-tag { padding: 3px 8px; font-size: 10px; background-color: #f1f3f5; color: #495057; border-radius: 2px; }
+    
+    /* ページネーション下部 */
+    .pagination-bottom { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; padding-top: 24px; border-top: 1px solid #ddd; }
+    .pagination-bottom a, .pagination-bottom span { padding: 10px 16px; border: 1px solid #ddd; font-size: 14px; }
+    .pagination-bottom a:hover { background-color: #f5f5f5; text-decoration: none; }
+    .pagination-bottom .current { background-color: #333; color: #fff; border-color: #333; }
+    
+    /* レスポンシブ */
+    @media (max-width: 1400px) {
+      .female-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 1100px) {
+      .female-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .member-page { flex-direction: column; }
+      .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #ddd; }
+      .female-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .female-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 会員専用ヘッダー -->
+  <header class="header member-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-placeholder">[ロゴ] Club Blue Tokyo</a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="#">マイページ</a></li>
+          <li><a href="#" style="border-bottom: 2px solid #fff;">女性検索</a></li>
+          <li><a href="#">お気に入り</a></li>
+          <li><a href="#">メッセージ</a></li>
+          <li><a href="#">セッティング履歴</a></li>
+          <li><a href="#">会員情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn btn-primary">ログアウト</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="member-page">
+    <!-- サイドバー（検索フィルター） -->
+    <aside class="sidebar">
+      <h2 class="sidebar-title">女性会員検索</h2>
+      
+      <div class="filter-group">
+        <label class="filter-label">エリア</label>
+        <select class="filter-select">
+          <option>東京都</option>
+          <option>神奈川県</option>
+          <option>千葉県</option>
+          <option>埼玉県</option>
+          <option>その他</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">ランク</label>
+        <select class="filter-select">
+          <option>指定なし</option>
+          <option>Azure</option>
+          <option>Sapphire</option>
+          <option>Royal Blue</option>
+          <option>Infinity Blue</option>
+          <option>Privilege Selection</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">年齢</label>
+        <div class="filter-range">
+          <select>
+            <option>下限なし</option>
+            <option>20歳</option>
+            <option>25歳</option>
+            <option>30歳</option>
+            <option>35歳</option>
+            <option>40歳</option>
+          </select>
+          <span>〜</span>
+          <select>
+            <option>上限なし</option>
+            <option>25歳</option>
+            <option>30歳</option>
+            <option>35歳</option>
+            <option>40歳</option>
+            <option>45歳</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">身長</label>
+        <div class="filter-range">
+          <select>
+            <option>下限なし</option>
+            <option>150cm</option>
+            <option>155cm</option>
+            <option>160cm</option>
+            <option>165cm</option>
+            <option>170cm</option>
+          </select>
+          <span>〜</span>
+          <select>
+            <option>上限なし</option>
+            <option>155cm</option>
+            <option>160cm</option>
+            <option>165cm</option>
+            <option>170cm</option>
+            <option>175cm</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">スタイル</label>
+        <select class="filter-select">
+          <option>指定なし</option>
+          <option>スレンダー</option>
+          <option>普通</option>
+          <option>グラマー</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">血液型</label>
+        <select class="filter-select">
+          <option>指定なし</option>
+          <option>A型</option>
+          <option>B型</option>
+          <option>O型</option>
+          <option>AB型</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">お酒</label>
+        <select class="filter-select">
+          <option>指定なし</option>
+          <option>飲む</option>
+          <option>少し飲む</option>
+          <option>飲まない</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">タバコ</label>
+        <select class="filter-select">
+          <option>指定なし</option>
+          <option>吸わない</option>
+          <option>吸う</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">キーワード</label>
+        <input type="text" class="filter-input" placeholder="キーワードを入力">
+        <p class="filter-note">※女性会員のお名前は「名字　名前」と間にスペースを入れて検索して下さい。</p>
+      </div>
+
+      <button class="filter-button">検索</button>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+      <div class="page-header">
+        <div class="page-title-area">
+          <span class="section-label">会員専用ページ: 女性会員一覧</span>
+          <h1>東京でセッティング可能な女性</h1>
+          <p class="added-content">現在の検索条件に該当する女性会員を表示しています</p>
+        </div>
+        <div class="pagination-info">
+          <div class="page-nav">
+            <a href="#">前へ</a>
+            <a href="#">次へ</a>
+          </div>
+          <p class="page-count">ページ: 1 / 79</p>
+        </div>
+      </div>
+
+      <!-- 女性会員グリッド -->
+      <div class="female-grid">
+
+        <!-- カード1 -->
+        <div class="female-card">
+          <span class="card-label new">新規の会員様です</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]<br>プライバシー保護のため<br>顔にぼかし加工</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank azure">Azure</span>
+            <p class="card-name added-content">佐久間 ゆいな</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">20代前半</span>
+              <span class="card-tag added-content">164cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード2 -->
+        <div class="female-card">
+          <span class="card-label premium">プラチナクラス</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank privilege">Privilege Selection</span>
+            <p class="card-name added-content">斉藤 るな</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">外国語</span>
+              <span class="card-tag added-content">20代後半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード3 -->
+        <div class="female-card">
+          <span class="card-label new">新規の会員様です</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank sapphire">Sapphire</span>
+            <p class="card-name added-content">田原 もえほ</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">外国語</span>
+              <span class="card-tag added-content">ゴルフ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード4 -->
+        <div class="female-card">
+          <span class="card-label new">新規の会員様です</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank royal">Royal Blue</span>
+            <p class="card-name added-content">大倉 みゆき</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">ゴルフ</span>
+              <span class="card-tag added-content">20代後半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード5 -->
+        <div class="female-card">
+          <span class="card-label recommend">おすすめ</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank infinity">Infinity Blue</span>
+            <p class="card-name added-content">中井 茉佑</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">30代前半</span>
+              <span class="card-tag added-content">168cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード6 -->
+        <div class="female-card">
+          <span class="card-label new">新規の会員様です</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank sapphire">Sapphire</span>
+            <p class="card-name added-content">古田 梨乃</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">20代前半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード7 -->
+        <div class="female-card">
+          <span class="card-label premium">プラチナクラス</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank privilege">Privilege Selection</span>
+            <p class="card-name added-content">桜井 みゆ</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">外国語</span>
+              <span class="card-tag added-content">30代前半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード8 -->
+        <div class="female-card">
+          <span class="card-label new">新規の会員様です</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank azure">Azure</span>
+            <p class="card-name added-content">初春 エミ</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">外国語</span>
+              <span class="card-tag added-content">20代後半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード9 -->
+        <div class="female-card">
+          <span class="card-label pickup">ピックアップ</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank royal">Royal Blue</span>
+            <p class="card-name added-content">倉本 すみれ</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">外国語</span>
+              <span class="card-tag added-content">ゴルフ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード10 -->
+        <div class="female-card">
+          <span class="card-label recommend">おすすめ</span>
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank infinity">Infinity Blue</span>
+            <p class="card-name added-content">鈴木 こう</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">ゴルフ</span>
+              <span class="card-tag added-content">20代後半</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード11 -->
+        <div class="female-card">
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank sapphire">Sapphire</span>
+            <p class="card-name added-content">古川 えり</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">30代前半</span>
+              <span class="card-tag added-content">160cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- カード12 -->
+        <div class="female-card">
+          <div class="card-image">
+            <div class="image-placeholder">[女性写真]</div>
+            <div class="card-overlay">
+              <a href="#" class="btn-small">お気に入り</a>
+              <a href="#" class="btn-small">詳細を見る</a>
+            </div>
+          </div>
+          <div class="card-info">
+            <span class="card-rank azure">Azure</span>
+            <p class="card-name added-content">佐々木 ねね</p>
+            <div class="card-tags">
+              <span class="card-tag added-content">20代前半</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ページネーション -->
+      <nav class="pagination-bottom" aria-label="ページナビゲーション">
+        <a href="#">前へ</a>
+        <span class="current">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <span>...</span>
+        <a href="#">79</a>
+        <a href="#">次へ</a>
+      </nav>
+
+      <div class="marketing-note" style="margin-top: 40px;">
+        【実装メモ】
+        <ul style="margin-top: 8px; padding-left: 20px; font-size: 12px;">
+          <li>女性会員の写真はプライバシー保護のため、顔にぼかし加工を施す</li>
+          <li>検索フィルターはAjaxで非同期に更新することを想定</li>
+          <li>お気に入り機能はログイン状態で保存</li>
+          <li>カードのラベル（新規・おすすめ・ピックアップ等）は管理画面で設定</li>
+          <li>ランクに応じたカード色分けで視認性を向上</li>
+        </ul>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer" style="margin-top: 0;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <p class="copyright">&copy; 2024 Club Blue Tokyo. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
