@@ -26,11 +26,23 @@
       font-weight: bold;
       letter-spacing: 0.04em;
     }
-    .merit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
-    .merit-card { border: 2px solid #333; padding: 32px 24px; text-align: center; background-color: #fff; }
-    .merit-icon { width: 60px; height: 60px; background-color: #f5f5f5; border: 1px dashed #999; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999; }
-    .merit-card h3 { font-size: 18px; margin-bottom: 12px; }
-    .merit-card p { font-size: 14px; color: #666; line-height: 1.8; }
+    .merit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .merit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border: 2px solid #333;
+      background-color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .merit-item::before {
+      content: "✓";
+      flex-shrink: 0;
+      font-weight: bold;
+      font-size: 18px;
+    }
     .safety-box { background-color: #f8f8f8; border: 2px solid #333; padding: 40px; margin-bottom: 40px; }
     .safety-box h3 { font-size: 20px; margin-bottom: 20px; text-align: center; }
     .safety-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -58,7 +70,7 @@
     .two-column-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 40px; }
     .image-placeholder-large { min-height: 350px; }
     @media (max-width: 1024px) {
-      .merit-grid { grid-template-columns: repeat(2, 1fr); }
+      .merit-grid { grid-template-columns: 1fr; }
       .two-column-content { grid-template-columns: 1fr; }
       .safety-list { grid-template-columns: 1fr; }
     }
@@ -147,40 +159,18 @@
       <section class="content-section" id="merits" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
         <span class="section-label">登録メリット</span>
         <div class="section-header">
-          <h2 class="section-title">Blue東京で活動するメリット</h2>
+          <h2 class="section-title">女性登録のメリット</h2>
         </div>
 
         <div class="merit-grid">
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>登録費・撮影費無料</h3>
-            <p class="added-content">ご登録にあたり、登録費や撮影費は一切いただきません。初期費用なしで安心して始められます。</p>
-          </div>
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>担当スタッフ制</h3>
-            <p class="added-content">お一人おひとりに専任のスタッフがつき、ご希望やご不安に丁寧に対応いたします。</p>
-          </div>
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>身バレ対策の徹底</h3>
-            <p class="added-content">プロフィール写真の加工や、お顔を出さない掲載方法など、身バレ対策を徹底しています。</p>
-          </div>
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>審査された男性会員</h3>
-            <p class="added-content">男性会員は全員、面談審査を通過した方のみ。安心して活動いただけます。</p>
-          </div>
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>出張面談対応</h3>
-            <p class="added-content">東京以外にお住まいの方も、出張面談でご対応可能です。お気軽にご相談ください。</p>
-          </div>
-          <div class="merit-card">
-            <div class="merit-icon">[icon]</div>
-            <h3>24時間サポート</h3>
-            <p class="added-content">活動中のご不安やトラブルには、24時間体制でサポートいたします。</p>
-          </div>
+          <div class="merit-item">登録費・撮影費すべて無料</div>
+          <div class="merit-item">身バレ対策も万全</div>
+          <div class="merit-item">未経験歓迎</div>
+          <div class="merit-item">無理な紹介は一切なし</div>
+          <div class="merit-item">担当スタッフがしっかりサポート</div>
+          <div class="merit-item">自分のペースで活動可能</div>
+          <div class="merit-item">関東近郊で面接可能(出張面接も可)</div>
+          <div class="merit-item">お友達紹介制度あり</div>
         </div>
       </section>
 
