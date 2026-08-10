@@ -138,9 +138,62 @@
     .cta-box .btn-primary { background-color: #fff; color: #333; }
     
     @media (max-width: 768px) {
-      .plan-comparison { grid-template-columns: 1fr; }
+      .page-title { font-size: 28px; }
+      .page-hero { padding: 40px 16px; }
+      .content-section { padding: 40px 0; }
+      .lead-text {
+        font-size: 15px;
+        line-height: 1.9;
+        text-align: left;
+      }
+      .lead-text br { display: none; }
+
+      .plan-comparison { grid-template-columns: 1fr; gap: 40px; }
+      .plan-box .plan-header { padding: 20px 16px; }
+      .plan-box .plan-header h3 { font-size: 20px; }
+      .plan-box .plan-body { padding: 24px 20px; }
+      .plan-box .plan-summary { font-size: 14px; text-align: center; }
+      .plan-box .plan-desc { font-size: 13px; line-height: 1.8; }
+      .plan-box .plan-desc p { text-align: left; }
+
+      .plan-box .plan-price-grid {
+        grid-template-columns: 1fr;
+      }
+      .plan-box .plan-price-row {
+        padding: 16px 8px;
+      }
+      .plan-box .plan-price-row + .plan-price-row {
+        border-left: none;
+        border-top: 1px solid #ddd;
+      }
+      .plan-box .plan-price-row .price { font-size: 28px; }
+      .plan-box .plan-cta .btn {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        line-height: 1.4;
+        padding: 14px 16px;
+      }
+
       .rank-fee-grid { grid-template-columns: 1fr; }
       .rank-fee-card.featured { grid-column: auto; }
+      .rank-fee-card { padding: 24px 16px; }
+      .rank-fee-price strong { font-size: 24px; }
+
+      .membership-section,
+      .female-fee-section {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 40px 16px !important;
+      }
+
+      .cta-box { padding: 40px 20px; }
+      .cta-box .btn {
+        display: inline-block;
+        white-space: normal;
+        margin: 6px 0;
+      }
+      .notes-box { padding: 24px 16px; }
     }
   </style>
 </head>
@@ -198,7 +251,7 @@
       </section>
 
       <!-- 男性会員プラン -->
-      <section class="content-section" id="membership-plan" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
+      <section class="content-section membership-section" id="membership-plan" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
         <span class="section-label">Membership Plan</span>
         <div class="section-header">
           <h2 class="section-title">男性会員プラン</h2>
@@ -356,7 +409,7 @@
       </section>
 
       <!-- 女性会員向け（簡易） -->
-      <section class="content-section" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
+      <section class="content-section female-fee-section" style="background-color: #f8f8f8; margin: 0 -20px; padding: 60px 20px;">
         <span class="section-label">女性会員</span>
         <div class="section-header">
           <h2 class="section-title">女性会員の料金</h2>
